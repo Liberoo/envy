@@ -1,0 +1,62 @@
+/**
+ * Kamil Test Pattern Script
+ * Testuje czy enqueue w patternach dzia≈Ça
+ */
+
+console.log('Ì∫Ä KAMIL TEST PATTERN - Script za≈Çadowany!');
+console.log('‚è∞ Timestamp:', new Date().toLocaleString());
+
+// Sprawd≈∫ czy dane z wp_localize_script dotar≈Çy
+if (typeof kamilTestPattern !== 'undefined') {
+    console.log('‚úÖ wp_localize_script dzia≈Ça!', kamilTestPattern);
+    console.log('Ì≥ß Wiadomo≈õƒá z PHP:', kamilTestPattern.message);
+    console.log('Ìø† Theme URL:', kamilTestPattern.theme_url);
+} else {
+    console.log('‚ùå wp_localize_script nie za≈Çadowa≈Ç danych');
+}
+
+// Dodaj event listener gdy DOM bƒôdzie gotowy
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Ì≥Ñ DOM za≈Çadowany - szukam patternu...');
+    
+    const pattern = document.querySelector('.kamil-test-enqueue-pattern');
+    if (pattern) {
+        console.log('ÌæØ Pattern znaleziony!', pattern);
+        
+        // Dodaj klasƒô CSS do wizualnego potwierdzenia
+        pattern.style.border = '3px solid #16a34a';
+        pattern.style.borderRadius = '10px';
+        pattern.style.padding = '20px';
+        pattern.style.background = 'linear-gradient(45deg, #f0f9ff, #ecfdf5)';
+        
+        // Znajd≈∫ przycisk i dodaj dodatkowy event
+        const button = pattern.querySelector('#kamil-test-button');
+        if (button) {
+            console.log('Ì¥ò Przycisk znaleziony!', button);
+            
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Ìæâ SUKCES! wp_enqueue_script w patternie dzia≈Ça!');
+                console.log('Ì≥ä Event details:', {
+                    timestamp: new Date(),
+                    pattern: pattern.className,
+                    buttonId: button.id
+                });
+                
+                // Poka≈º alert jako dodatkowe potwierdzenie
+                alert('Ìæâ DZIA≈ÅA! Sprawd≈∫ console (F12) po wiƒôcej detali.');
+            });
+        }
+    } else {
+        console.log('‚ùå Pattern nie znaleziony na stronie');
+    }
+});
+
+// Test funkcji dostƒôpnych w WordPress
+console.log('Ì¥ç Testowanie dostƒôpnych obiekt√≥w...');
+console.log('jQuery dostƒôpne?', typeof jQuery !== 'undefined' ? '‚úÖ TAK' : '‚ùå NIE');
+console.log('wp dostƒôpne?', typeof wp !== 'undefined' ? '‚úÖ TAK' : '‚ùå NIE');
+
+// Dodaj marker ≈ºe script siƒô wykona≈Ç
+window.kamilTestPatternLoaded = true;
+console.log('‚ú® Kamil Test Pattern Script - GOTOWY!');

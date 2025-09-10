@@ -1,0 +1,7 @@
+.random-letter {
+  @apply font-pressstart text-black relative top-[5px];
+}
+
+.disable {
+  @apply hidden;
+}

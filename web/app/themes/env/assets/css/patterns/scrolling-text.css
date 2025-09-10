@@ -1,0 +1,55 @@
+.scrolling-text-container {
+  @apply w-full overflow-hidden  py-4;
+}
+
+.scrolling-text-content {
+  @apply text-sm font-bold text-black whitespace-nowrap;
+  margin: 0;
+}
+
+.scrolling-text-wrapper {
+  @apply inline-block;
+  animation: scroll-right-to-left 25s linear infinite;
+}
+
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Variants - różne prędkości */
+.scrolling-text-slow .scrolling-text-wrapper {
+  animation-duration: 35s;
+}
+
+.scrolling-text-fast .scrolling-text-wrapper {
+  animation-duration: 15s;
+}
+
+/* Color variants z dziedziczeniem */
+.scrolling-text-primary {
+  @apply text-black;
+}
+
+.scrolling-text-accent {
+  @apply bg-gradient-to-r from-pink-500 to-purple-600 text-pink-100;
+}
+
+.scrolling-text-dark {
+  @apply bg-gray-800 text-gray-100;
+}
+
+/* Dodatkowe opcje stylowania */
+
+/* Różne tła */
+.scrolling-text-transparent {
+  @apply bg-transparent text-gray-800;
+}
+
+.scrolling-text-gradient {
+  @apply bg-gradient-to-r from-purple-600 to-blue-600 text-white;
+}

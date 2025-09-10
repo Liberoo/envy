@@ -1,0 +1,14 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./variables.css";
+
+/** GLOBAL */
+@import "./shared.css";
+
+/** parts */
+@import "./parts/index.css";
+
+/** patterns */
+@import "./patterns/index.css";

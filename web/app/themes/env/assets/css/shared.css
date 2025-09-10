@@ -1,0 +1,177 @@
+body {
+  @apply bg-[var(--wp--custom--colors--body)];
+}
+
+body::before {
+  @apply absolute content-[''] block top-0 left-0 right-0 bg-gradient-to-b from-gray-200 to-[var(--wp--custom--colors--body)] h-screen z-[-1] w-full;
+}
+
+.site-main,
+.main-content {
+  @apply mt-0 mb-32;
+}
+
+.main-content {
+  @apply min-h-[40vh] py-16 mt-0;
+}
+
+.main-content p {
+  @apply lg:text-balance;
+}
+
+.home .main-content {
+  @apply py-0;
+}
+
+/** width content align */
+.entry-content ul:not(.wp-block-post-template) {
+  @apply pl-9;
+}
+
+.entry-content ul.wp-block-social-links,
+.entry-content ul.wpp-list-posts {
+  @apply pl-0;
+}
+
+/** template */
+.no-hero {
+  @apply pt-48;
+}
+
+/** text selection color */
+
+::selection {
+  @apply text-white bg-accent;
+}
+
+.wp-block-post-content
+  a:where(:not(.wp-block-button__link):not(.wp-block-social-link-anchor)) {
+  @apply after:content-[''] after:block after:absolute after:-bottom-0.5 after:left-0 after:w-0 after:h-0.5 relative after:transition-all hover:after:w-full after:bg-link-gradient hover:no-underline no-underline;
+}
+
+.wp-block-post-title a,
+.wp-block-post-featured-image a,
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a {
+  @apply no-underline after:hidden text-inherit after:content-none hover:after:hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  hyphens: auto;
+}
+
+/** core/separator */
+.wp-block-separator {
+  border-bottom: 1px solid;
+}
+
+/** code **/
+
+p > code {
+  @apply px-1 py-0.5 bg-slate-200;
+}
+
+/** block style */
+
+.is-style-img-dropshadow img {
+  filter: drop-shadow(0 0 0.75rem var(--wp--preset--color--cyan-bluish-gray));
+}
+
+.is-style-img-dropshadow-rounded img {
+  @apply rounded-xl;
+  filter: drop-shadow(0 0 0.75rem var(--wp--preset--color--cyan-bluish-gray));
+}
+
+.is-style-text-gradient {
+  @apply text-transparent bg-gradient-to-r bg-clip-text from-[#bd34fe] to-[#41d1ff] animate-text-gradient;
+}
+
+.is-style-text-effect {
+  @apply font-extrabold transition-all text-accent;
+  text-shadow:
+    4px 4px 0px var(--wp--preset--color--primary),
+    8px 8px 0px var(--wp--preset--color--secondary),
+    12px 12px 0px var(--wp--preset--color--cyan-bluish-gray);
+}
+
+.presswind-link a span {
+  /* @apply text-transparent bg-gradient-to-r bg-clip-text from-[#bd34fe] to-[#41d1ff] animate-text-gradient; */
+  @apply font-extrabold transition-all text-accent;
+  /* text-shadow: 1px 1px 0px var(--wp--preset--color--primary); */
+  /* 1.1px 1.1px 0px var(--wp--preset--color--secondary); */
+  /* 1.2px 1.2px 0px var(--wp--preset--color--cyan-bluish-gray); */
+}
+
+.is-style-title-hero {
+  @apply text-transparent from-accent to-pink-900 bg-gradient-to-tr bg-clip-text text-balance;
+}
+
+.is-style-underscore {
+  @apply before:content-[''] before:w-10 before:bg-accent before:h-[3px] before:block flex items-center gap-1;
+}
+
+/** button icon presswind */
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.button-with-icon {
+  --borderWidth: 2px;
+  @apply relative bg-white rounded-3xl;
+}
+
+.button-with-icon:after {
+  @apply content-[''] absolute rounded-full z-[-1];
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab);
+  animation: animatedgradient 2s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+.button-with-icon > p > a {
+  @apply static hover:after:hidden before:content-[''] before:absolute before:inset-0.5 before:bg-transparent before:rounded-3xl before:hover:bg-white/25 before:border before:border-transparent before:block;
+}
+
+.button-with-icon .wp-block-social-links {
+  @apply ml-3;
+}
+
+.wp-search-algolia {
+  @apply min-h-[500px];
+}
+
+/** hero **/
+.gm-hero-home p {
+  @apply lg:text-balance;
+}
+
+/** bug shiki in safari IOS **/
+pre.shiki code span.line span {
+  -webkit-text-size-adjust: none;
+}
+
+/** simple */
+.wpp-simple-bloc {
+  @apply flex-col md:flex-row;
+}
+.wpp-simple-bloc > div {
+  @apply w-full md:w-auto;
+}
