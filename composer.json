@@ -61,7 +61,8 @@
     "roots/wordpress": "^6.8.1",
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "wpperformance/presswind-helpers": "^1.0"
+    "wpperformance/presswind-helpers": "^1.0",
+    "wpackagist-plugin/svg-support": "*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
