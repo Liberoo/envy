@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0">
+  <defs>
+    <g></g>
+    <clipPath id="493e77bf1c">
+      <path d="M 23 0 L 324 0 L 324 375 L 23 375 Z M 23 0 " clip-rule="nonzero"></path>
+    </clipPath>
+    <clipPath id="c9c5a32a6e">
+      <rect x="0" width="337" y="0" height="375"></rect>
+    </clipPath>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 14, 0)">
+    <g clip-path="url(#c9c5a32a6e)">
+      <g clip-path="url(#493e77bf1c)">
+        <g fill="#ffffff" fill-opacity="1">
+          <g transform="translate(1.855806, 374.284312)">
+            <g>
+              <path d="M 96.546875 -225.28125 L 171.640625 -225.28125 L 171.640625 -150.1875 L 96.546875 -150.1875 L 96.546875 0 L 21.453125 0 L 21.453125 -375.453125 L 96.546875 -375.453125 Z M 246.734375 -300.359375 L 246.734375 -375.453125 L 321.828125 -375.453125 L 321.828125 -300.359375 Z M 171.640625 -225.28125 L 171.640625 -300.359375 L 246.734375 -300.359375 L 246.734375 -225.28125 Z M 246.734375 -75.09375 L 171.640625 -75.09375 L 171.640625 -150.1875 L 246.734375 -150.1875 Z M 321.828125 0 L 246.734375 0 L 246.734375 -75.09375 L 321.828125 -75.09375 Z M 321.828125 0 "></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

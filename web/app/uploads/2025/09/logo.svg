@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="500" preserveAspectRatio="xMidYMid meet" version="1.0">
+  <defs>
+    <g></g>
+    <clipPath id="13fdd4cc14">
+      <rect x="0" width="230" y="0" height="369"></rect>
+    </clipPath>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 55, 6)">
+    <g clip-path="url(#13fdd4cc14)">
+      <g fill="#ffffff" fill-opacity="1">
+        <g transform="translate(2.262692, 290.99519)">
+          <g>
+            <path d="M 65.484375 -152.78125 L 116.40625 -152.78125 L 116.40625 -101.859375 L 65.484375 -101.859375 L 65.484375 0 L 14.546875 0 L 14.546875 -254.640625 L 65.484375 -254.640625 Z M 167.328125 -203.71875 L 167.328125 -254.640625 L 218.265625 -254.640625 L 218.265625 -203.71875 Z M 116.40625 -152.78125 L 116.40625 -203.71875 L 167.328125 -203.71875 L 167.328125 -152.78125 Z M 167.328125 -50.921875 L 116.40625 -50.921875 L 116.40625 -101.859375 L 167.328125 -101.859375 Z M 218.265625 0 L 167.328125 0 L 167.328125 -50.921875 L 218.265625 -50.921875 Z M 218.265625 0 "></path>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
