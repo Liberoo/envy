@@ -1,21 +1,41 @@
 .scrolling-text-container {
-  @apply w-full overflow-hidden  py-4;
+  @apply w-full overflow-hidden  py-4 relative top-[50px] max-w-[515px];
 }
 
 .scrolling-text-content {
-  @apply text-sm font-bold text-black whitespace-nowrap;
-  margin: 0;
+  @apply text-sm font-bold text-black relative whitespace-nowrap overflow-hidden;
+}
+.scrolling-text-content{
+  &:before,&:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+  }
+  &:before{
+    left:0;
+    background: linear-gradient(to right, white, transparent);
+
+  }
+  &:after{
+    right:0;
+    background: linear-gradient(to right, transparent, white);
+
+  }
 }
 
 .scrolling-text-wrapper {
-  @apply inline-block;
-  animation: scroll-right-to-left 25s linear infinite;
+  @apply inline-block whitespace-nowrap;
+  width: max-content;
+  /* animation: scroll-right-to-left 5s linear infinite; */
 }
 
 @keyframes scroll-right-to-left {
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
