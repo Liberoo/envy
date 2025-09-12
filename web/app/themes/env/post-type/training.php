@@ -87,4 +87,4 @@ function register_custom_post_type()
     register_post_type('training', $args);
 }
 
-add_action('init', __NAMESPACE__.'\register_custom_post_type', 0);
+// add_action('init', __NAMESPACE__.'\register_custom_post_type', 0);

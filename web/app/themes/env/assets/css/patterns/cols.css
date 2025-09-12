@@ -1,0 +1,13 @@
+.cols {
+  @apply max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20;
+}
+.cols-left {
+  @apply flex-none grow-0 shrink-0 w-auto;
+}
+.cols-right {
+  @apply flex-1  max-w-[800px];
+}
+
+.cols-right figure img {
+  @apply aspect-square w-full h-full object-cover;
+}

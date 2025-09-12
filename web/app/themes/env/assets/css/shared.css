@@ -1,9 +1,5 @@
 body {
-  @apply bg-[var(--wp--custom--colors--body)];
-}
-
-body::before {
-  @apply absolute content-[''] block top-0 left-0 right-0 bg-gradient-to-b from-gray-200 to-[var(--wp--custom--colors--body)] h-screen z-[-1] w-full;
+  @apply bg-[var(--wp--preset--color--clear-gray)];
 }
 
 .site-main,

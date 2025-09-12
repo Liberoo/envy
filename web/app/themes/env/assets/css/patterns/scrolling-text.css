@@ -1,34 +1,40 @@
 .scrolling-text-container {
   @apply w-full overflow-hidden  py-4 relative top-[50px] max-w-[515px];
 }
+.scrolling-text-container--full {
+  @apply max-w-full;
+}
 
 .scrolling-text-content {
   @apply text-sm font-bold text-black relative whitespace-nowrap overflow-hidden;
 }
-.scrolling-text-content{
-  &:before,&:after{
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 100%;
+.scrolling-text-content {
+  &:before,
+  &:after {
+    @apply content-[''] absolute top-0 w-[50px] h-full z-10;
   }
-  &:before{
-    left:0;
-    background: linear-gradient(to right, white, transparent);
-
+  &:before {
+    @apply left-0;
+    background: linear-gradient(
+      to right,
+      var(--wp--preset--color--clear-gray),
+      transparent
+    );
   }
-  &:after{
-    right:0;
-    background: linear-gradient(to right, transparent, white);
-
+  &:after {
+    @apply right-0;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--wp--preset--color--clear-gray)
+    );
   }
 }
 
 .scrolling-text-wrapper {
   @apply inline-block whitespace-nowrap;
   width: max-content;
-  /* animation: scroll-right-to-left 5s linear infinite; */
+  animation: scroll-right-to-left 25s linear infinite;
 }
 
 @keyframes scroll-right-to-left {
