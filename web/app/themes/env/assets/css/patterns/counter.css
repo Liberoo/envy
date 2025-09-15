@@ -1,0 +1,24 @@
+.counter-wrapper {
+  @apply flex flex-col md:flex-row mt-0;
+  counter-reset: counter-item;
+}
+
+.counter-element {
+  @apply border-lightGray border border-t-0 border-l-0 border-r-0 md:border-r border-solid p-5 md:p-10;
+  counter-increment: counter-item;
+}
+
+.counter-heading {
+  @apply text-5xl font-bold;
+}
+
+.counter-heading::before {
+  content: "/" counter(counter-item, counter-3-digit);
+  @apply block  text-right text-base;
+}
+
+@counter-style counter-3-digit {
+  system: numeric;
+  symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+  pad: 3 "0";
+}

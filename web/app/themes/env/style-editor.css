@@ -1338,11 +1338,17 @@ footer.wp-block-template-part .wpp-links-credit svg {
     margin-top: 2.5rem;
     height: auto;
     overflow: hidden;
-    border-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
 }
 @media (min-width: 1024px) {
     .about-image .hero-noise {
-        border-radius: 50px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
     }
 }
 .about-image .hero-noise:before {

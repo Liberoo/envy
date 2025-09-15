@@ -1,0 +1,11 @@
+.skills {
+  @apply list-none flex flex-wrap gap-2 min-w-[300px] p-0 m-0 pl-0;
+}
+
+.skills li {
+  @apply px-3 py-2 bg-black text-white text-xs rounded-[50px] font-bold;
+}
+
+.entry-content ul.skills:not(.wp-block-post-template) {
+  @apply pl-0;
+}

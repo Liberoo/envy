@@ -2,7 +2,7 @@
   @apply relative container mx-auto;
 }
 .about-image .hero-noise {
-  @apply h-auto relative rounded-xl lg:rounded-[50px] overflow-hidden mt-10;
+  @apply h-auto relative rounded-t-xl overflow-hidden mt-10;
 }
 .about-image .hero-noise:before {
   @apply z-10 opacity-[0.06];

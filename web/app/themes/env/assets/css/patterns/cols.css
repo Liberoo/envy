@@ -1,6 +1,9 @@
 .cols {
   @apply max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20;
 }
+.cols--low-gap {
+  @apply gap-12 md:gap-12;
+}
 .cols-left {
   @apply flex-none grow-0 shrink-0 w-auto;
 }

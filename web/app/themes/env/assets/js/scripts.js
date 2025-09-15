@@ -56,3 +56,8 @@ loadInteractivityStore(
 //     "./interactivity/my-new-store.js",
 //     "My New Pattern"
 // );
+
+// Counter animation pattern
+document.querySelectorAll(".counter").forEach((element) => {
+	importObserver(element, "counter");
+});

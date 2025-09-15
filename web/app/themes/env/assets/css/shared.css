@@ -171,3 +171,10 @@ pre.shiki code span.line span {
 .wpp-simple-bloc > div {
   @apply w-full md:w-auto;
 }
+
+.wrapper {
+  @apply container mx-auto;
+}
+strong {
+  @apply font-bold;
+}
