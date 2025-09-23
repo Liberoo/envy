@@ -1,0 +1,23 @@
+.faq {
+  @apply bg-black  rounded-t-[50px] max-w-[1400px] mx-auto overflow-hidden text-white;
+}
+.faq h2 {
+  @apply text-white;
+}
+.faq .random-letter.animation-complete {
+  @apply text-white;
+}
+.faq-heading {
+  @apply bg-transparent border-none;
+}
+.faq-wrapper {
+  @apply px-5;
+}
+
+.faq button {
+  @apply bg-transparent border-none text-5xl w-full text-white py-10 text-left;
+}
+
+.faq-content {
+  @apply overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0;
+}

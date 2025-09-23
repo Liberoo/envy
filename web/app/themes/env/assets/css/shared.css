@@ -175,6 +175,9 @@ pre.shiki code span.line span {
 .wrapper {
   @apply container mx-auto;
 }
+.wrapper-xl {
+  @apply max-w-[1500px];
+}
 strong {
   @apply font-bold;
 }
