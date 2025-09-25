@@ -1,0 +1,54 @@
+.blog {
+  @apply mx-auto;
+}
+
+.blog-wrapper {
+  @apply flex gap-5 items-start;
+}
+.blog-wrapper:where(.is-layout-flow) > * {
+  margin-block-start: 0;
+}
+.blog-wrapper li {
+  @apply relative overflow-hidden  min-h-[400px]  text-lg flex items-start justify-end flex-col;
+}
+.blog-wrapper li:nth-child(1) {
+  @apply w-2/3 aspect-square rounded-3xl;
+}
+.blog-wrapper li:nth-child(2),
+.blog-wrapper li:nth-child(3) {
+  @apply w-1/3;
+}
+.blog-wrapper figure {
+  @apply overflow-hidden;
+}
+.blog-wrapper li:nth-child(1) figure {
+  @apply absolute w-full h-full object-cover top-0 left-0;
+}
+.blog-wrapper li:nth-child(1) figure img {
+  @apply aspect-square;
+}
+.blog-wrapper li:not(:nth-child(1)) figure {
+  @apply rounded-3xl overflow-hidden;
+}
+.blog-wrapper figure img {
+  @apply w-full h-full object-cover object-left duration-300;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.blog-wrapper li:hover img {
+  @apply scale-110 blur-0;
+}
+
+.blog-wrapper h3 {
+  @apply relative m-0 text-lg my-2 p-0 text-black;
+}
+.blog-wrapper .wp-block-post-excerpt {
+  @apply relative m-0 font-semibold text-sm text-secondary;
+}
+
+.blog-wrapper .wp-block-post-date {
+  @apply text-sm text-secondary;
+}
