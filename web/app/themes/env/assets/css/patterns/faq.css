@@ -1,5 +1,5 @@
 .faq {
-  @apply bg-black  rounded-t-[80px]  mx-auto overflow-hidden text-white relative pb-24;
+  @apply bg-black   mx-auto overflow-hidden text-white relative pb-24;
   counter-reset: faq;
 }
 .faq h2 {

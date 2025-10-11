@@ -12,7 +12,7 @@
   @apply relative overflow-hidden  min-h-[400px]  text-lg flex items-start justify-end flex-col;
 }
 .blog-wrapper li:nth-child(1) {
-  @apply w-2/3 aspect-square rounded-3xl;
+  @apply w-2/3 aspect-square;
 }
 .blog-wrapper li:nth-child(2),
 .blog-wrapper li:nth-child(3) {
@@ -28,10 +28,10 @@
   @apply aspect-square;
 }
 .blog-wrapper li:not(:nth-child(1)) figure {
-  @apply rounded-3xl overflow-hidden;
+  @apply overflow-hidden;
 }
 .blog-wrapper figure img {
-  @apply w-full h-full object-cover object-left duration-300 border-8 border-gray-300 border-solid rounded-3xl;
+  @apply w-full h-full object-cover object-left duration-300 border-4 border-gray-300 border-solid;
 
   transition:
     transform 0.3s ease,
@@ -59,7 +59,7 @@
   @apply absolute top-5 right-5;
 }
 .blog-wrapper li .taxonomy-category.wp-block-post-terms a {
-  @apply text-black bg-lightGray rounded-3xl px-4 py-2 text-sm;
+  @apply text-black bg-lightGray  px-4 py-2 text-sm;
 }
 .blog-wrapper li .taxonomy-category.wp-block-post-terms a:after {
   @apply hidden;
