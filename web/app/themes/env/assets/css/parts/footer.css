@@ -1,6 +1,11 @@
 footer.footer {
-  @apply fixed bottom-0 w-full min-h-[600px] pt-12;
-
+  @apply fixed bottom-0 w-full h-[600px] pt-12;
+  a {
+    @apply text-white no-underline;
+  }
+  .footer-wrapper {
+    @apply h-full flex flex-col justify-between pb-5;
+  }
   .footer-left {
     @apply z-10 w-1/2;
     p {
@@ -9,6 +14,7 @@ footer.footer {
     a {
       @apply text-white no-underline;
     }
+
     .footer-mail {
       @apply text-2xl;
     }
@@ -16,15 +22,26 @@ footer.footer {
       @apply mt-2 text-xl;
     }
   }
-
-  img {
-    @apply max-w-[250px];
+  .footer-cols {
+    @apply flex justify-between items-center;
   }
   .footer-belt {
-    @apply flex justify-evenly items-center;
+    @apply grid grid-cols-3 items-center;
+
     p {
       @apply mt-0;
     }
+
+    .footer-copyright {
+      @apply col-start-2 justify-self-center;
+    }
+    .footer-link {
+      @apply col-start-3 justify-self-end;
+    }
+  }
+
+  img {
+    @apply max-w-[150px];
   }
 }
 main {

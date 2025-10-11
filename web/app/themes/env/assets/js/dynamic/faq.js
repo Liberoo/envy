@@ -2,6 +2,12 @@ document.querySelectorAll("button[aria-controls]").forEach((button) => {
   const targetId = button.getAttribute("aria-controls");
   const target = document.getElementById(targetId);
 
+  // Sprawdź czy target istnieje
+  if (!target) {
+    console.warn(`FAQ: Element with ID "${targetId}" not found`);
+    return;
+  }
+
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
     button.setAttribute("aria-expanded", !expanded);

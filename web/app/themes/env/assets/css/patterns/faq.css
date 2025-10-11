@@ -13,10 +13,13 @@
 }
 .faq-item {
   border-bottom: 1px solid var(--wp--preset--color--dark-white);
-  @apply pb-5;
+  @apply pb-5 mt-0;
+  h3 {
+    @apply p-0;
+  }
 }
 .faq-heading {
-  @apply bg-transparent border-none;
+  @apply bg-transparent border-none cursor-pointer py-10;
 }
 .faq-wrapper {
   @apply px-5 relative z-20;

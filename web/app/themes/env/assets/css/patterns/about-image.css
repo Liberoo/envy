@@ -1,12 +1,18 @@
 .about-image {
   @apply relative container mx-auto;
 }
-.about-image .hero-noise {
+.about-image .hero-noise,
+.wp-block-image.hero-noise {
   @apply h-auto relative  overflow-hidden mt-10;
 }
-.about-image .hero-noise:before {
+.about-image .hero-noise:before,
+.wp-block-image.hero-noise:before {
   @apply z-10 opacity-[0.06];
 }
 .about-image img {
   @apply aspect-video w-full  object-cover;
+}
+
+.wp-block-image.hero-noise {
+  @apply mt-0;
 }

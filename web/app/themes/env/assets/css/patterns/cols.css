@@ -14,3 +14,10 @@
 .cols-right figure img {
   @apply aspect-square w-full h-full object-cover;
 }
+
+.portfolio .cols {
+  @apply items-start;
+  p {
+    @apply mt-0;
+  }
+}
