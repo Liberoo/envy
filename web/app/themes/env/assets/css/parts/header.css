@@ -1,5 +1,5 @@
 .navigation {
-  @apply h-[100px]  fixed z-50 w-full;
+  @apply h-[60px]  fixed z-50 w-full;
 
   .navigation-header {
     @apply w-full h-full bg-black flex justify-between items-center px-10 py-5;
@@ -25,29 +25,32 @@
       }
     }
   }
-  nav.navigation-panel {
-    @apply absolute w-[80%] max-w-[500px] z-10  h-screen  text-black right-0 top-0 m-0;
-    transform: translateX(100%);
-
-    ul {
-      @apply w-full h-full bg-white  z-10 relative flex flex-col justify-center items-end px-10 text-xl uppercase text-[50px] gap-10 duration-500 ease-in-out delay-500 transition-transform;
+  .navigation-content-wrapper {
+    @apply absolute w-[80%] max-w-[500px] z-10 h-screen text-black right-0 top-0 m-0 translate-x-full flex flex-col justify-between px-6;
+    &:before,
+    &:after {
+      @apply content-[''] absolute w-full h-full top-0 left-0 z-[-1];
       transform: translateX(100%);
+    }
 
-      &:before,
-      &:after {
-        @apply content-[''] absolute w-full h-full top-0 left-0 z-[-1];
-        transform: translateX(100%);
-      }
+    &:before {
+      @apply bg-black;
+    }
+    &:after {
+      @apply bg-white;
+    }
+    .navigation-info{
+      @apply  mt-0 pt-12 flex flex-col items-end pb-24 justify-end flex-1 opacity-0 translate-y-1/2 ;
+    }
 
-      &:before {
-        @apply bg-green-400;
-      }
-      &:after {
-        @apply bg-yellow-400;
-      }
+  
+    ul {
+      @apply w-full h-full z-10 relative flex flex-col pt-24 justify-center items-end text-xl uppercase text-[50px] gap-10 duration-500 ease-in-out delay-500 transition-transform;
+      transform: translateX(100%);
 
       li {
         @apply overflow-hidden py-5;
+
         a {
           transform: rotate(10deg) translateY(50px);
           transform-origin: left center;
@@ -59,21 +62,25 @@
 }
 
 .navigation.active {
-  .navigation-panel {
+  .navigation-content-wrapper {
     transform: translateX(0);
+    &:before,
+    &:after {
+      transform: translateX(0);
+      transition: transform 0.5s ease-in-out;
+    }
+    &:before {
+      transition-delay: 0.1s;
+    }
+    &:after {
+      transition-delay: 0.3s;
+    }
+    .navigation-info{
+      @apply opacity-100 translate-y-0 transition-opacity transition-transform  duration-500 ease-in-out delay-1000;
+    }
     ul {
       transform: translateX(0);
-      &:before,
-      &:after {
-        transform: translateX(0);
-        transition: transform 0.5s ease-in-out;
-      }
-      &:before {
-        transition-delay: 0.1s;
-      }
-      &:after {
-        transition-delay: 0.3s;
-      }
+  
 
       li {
         a {

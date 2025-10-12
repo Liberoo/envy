@@ -45,7 +45,7 @@ document.querySelectorAll(".faq").forEach((element) => {
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".navigation");
-  const mainMenu = document.querySelector(".navigation-panel");
+  const mainMenu = document.querySelector(".navigation-content-wrapper");
 
   if (menuToggle && navigation) {
     // Initialize menu state

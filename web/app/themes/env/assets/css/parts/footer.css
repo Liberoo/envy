@@ -1,5 +1,5 @@
 footer.footer {
-  @apply fixed bottom-0 w-full h-[600px] pt-12;
+  @apply fixed bottom-0 w-full h-[500px] pt-12;
   a {
     @apply text-white no-underline;
   }
