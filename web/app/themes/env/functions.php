@@ -18,7 +18,7 @@ require_once dirname(__FILE__) . '/inc/variations_blocks.php';
 require_once dirname(__FILE__) . '/inc/binding-meta.php';
 
 // post type
-require_once dirname(__FILE__) . '/post-type/snippet.php';
+require_once dirname(__FILE__) . '/post-type/portfolio.php';
 require_once dirname(__FILE__) . '/post-type/training.php';
 
 // pwa icons
