@@ -50,6 +50,7 @@ function register_custom_post_type()
         'taxonomies' => [
             'category',
             'post_tag',
+            'portfolio_type',
         ],
         'hierarchical' => false,
         'public' => true,
@@ -75,4 +76,48 @@ function register_custom_post_type()
     register_post_type('portfolio', $args);
 }
 
+function register_portfolio_taxonomy()
+{
+    $labels = [
+        'name' => _x('Rodzaje projektów', 'Taxonomy General Name', 'wp-performance'),
+        'singular_name' => _x('Rodzaj projektu', 'Taxonomy Singular Name', 'wp-performance'),
+        'menu_name' => __('Rodzaje projektów', 'wp-performance'),
+        'all_items' => __('Wszystkie rodzaje projektów', 'wp-performance'),
+        'parent_item' => __('Nadrzędny rodzaj projektu', 'wp-performance'),
+        'parent_item_colon' => __('Nadrzędny rodzaj projektu:', 'wp-performance'),
+        'new_item_name' => __('Nowy rodzaj projektu', 'wp-performance'),
+        'add_new_item' => __('Dodaj nowy rodzaj projektu', 'wp-performance'),
+        'edit_item' => __('Edytuj rodzaj projektu', 'wp-performance'),
+        'update_item' => __('Aktualizuj rodzaj projektu', 'wp-performance'),
+        'view_item' => __('Zobacz rodzaj projektu', 'wp-performance'),
+        'separate_items_with_commas' => __('Oddziel rodzaje projektów przecinkami', 'wp-performance'),
+        'add_or_remove_items' => __('Dodaj lub usuń rodzaje projektów', 'wp-performance'),
+        'choose_from_most_used' => __('Wybierz z najczęściej używanych', 'wp-performance'),
+        'popular_items' => __('Popularne rodzaje projektów', 'wp-performance'),
+        'search_items' => __('Szukaj rodzajów projektów', 'wp-performance'),
+        'not_found' => __('Nie znaleziono', 'wp-performance'),
+        'no_terms' => __('Brak rodzajów projektów', 'wp-performance'),
+        'items_list' => __('Lista rodzajów projektów', 'wp-performance'),
+        'items_list_navigation' => __('Nawigacja listy rodzajów projektów', 'wp-performance'),
+    ];
+
+    $args = [
+        'labels' => $labels,
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud' => true,
+        'show_in_rest' => true,
+        'rewrite' => [
+            'slug' => 'rodzaj-projektu',
+            'with_front' => false,
+        ],
+    ];
+
+    register_taxonomy('portfolio_type', 'portfolio', $args);
+}
+
 add_action('init', __NAMESPACE__.'\register_custom_post_type', 0);
+add_action('init', __NAMESPACE__.'\register_portfolio_taxonomy', 0);
