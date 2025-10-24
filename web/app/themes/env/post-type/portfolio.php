@@ -79,9 +79,9 @@ function register_custom_post_type()
 function register_portfolio_taxonomy()
 {
     $labels = [
-        'name' => _x('Rodzaje projektów', 'Taxonomy General Name', 'wp-performance'),
+        'name' => _x('Rodzaj projektu', 'Taxonomy General Name', 'wp-performance'),
         'singular_name' => _x('Rodzaj projektu', 'Taxonomy Singular Name', 'wp-performance'),
-        'menu_name' => __('Rodzaje projektów', 'wp-performance'),
+        'menu_name' => __('Rodzaj projektu', 'wp-performance'),
         'all_items' => __('Wszystkie rodzaje projektów', 'wp-performance'),
         'parent_item' => __('Nadrzędny rodzaj projektu', 'wp-performance'),
         'parent_item_colon' => __('Nadrzędny rodzaj projektu:', 'wp-performance'),
