@@ -56,6 +56,11 @@
           "color": "#ebe8e4",
           "name": "Light Gray",
           "slug": "lightGray"
+        },
+        {
+          "color": "#121212",
+          "name": "Dark Gray",
+          "slug": "darkGray"
         }
       ]
     },

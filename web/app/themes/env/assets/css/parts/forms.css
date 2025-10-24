@@ -1,0 +1,82 @@
+/* Form Input Styles */
+input,
+textarea:not([type="submit"]) {
+  @apply bg-transparent py-4 px-0 w-full border-0 border-b-2 border-[rgba(0,0,0,0.12)] transition-[border-color,color] duration-300 ease-in-out will-change-[border-color,color] font-['Outfit',sans-serif] text-base placeholder:text-black placeholder:opacity-30 text-black;
+}
+
+input:focus,
+textarea:focus {
+  @apply border-0 border-b-2 border-black outline-none text-black;
+}
+
+/* Placeholder disappears when typing - standard HTML behavior */
+input:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
+  @apply text-black;
+}
+
+label {
+  @apply text-base transition-[color] duration-300 ease-in-out will-change-[color] block mb-[50px];
+}
+
+/* Screen reader only labels */
+.sr-only-label {
+  @apply sr-only;
+}
+
+label:has(input:focus),
+label:has(textarea:focus) {
+  @apply text-[var(--wp--preset--color--custom-l-ight-dark)];
+}
+
+input[type="submit"] {
+  @apply border-2 bg-black border-black text-white py-4 uppercase inline-block cursor-pointer w-auto px-10 mx-auto relative duration-500 ease-in-out will-change-[background-color,color];
+  &:hover {
+    @apply bg-white text-black;
+  }
+}
+
+.contact {
+  @apply flex flex-col gap-10 md:gap-24 md:flex-row w-full p-5;
+}
+.contact-wrapper {
+  @apply p-5;
+}
+.contact-right {
+  @apply w-full md:w-1/2 order-1 md:order-2;
+}
+.contact-form {
+  @apply order-2 md:order-1;
+}
+.wp-block-contact-form-7-contact-form-selector {
+  @apply w-auto max-w-[600px] md:w-1/2 flex justify-center items-center;
+}
+
+.wpcf7 {
+  @apply w-full;
+}
+
+/* Placeholder styles for form fields */
+input[type="text"],
+input[type="email"],
+textarea {
+  @apply placeholder:text-black placeholder:opacity-30;
+}
+
+/* Placeholder disappears when typing */
+input:not(:placeholder-shown)::placeholder,
+textarea:not(:placeholder-shown)::placeholder {
+  @apply opacity-0;
+}
+
+.creator {
+  @apply flex gap-2 items-center;
+}
+.creator-image {
+  img {
+    @apply w-[65px] h-[65px] object-cover rounded-full;
+  }
+}
+.creator-text {
+  @apply m-0;
+}

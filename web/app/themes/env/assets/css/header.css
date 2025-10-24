@@ -1,6 +1,6 @@
 /** header **/
 .site-header {
-  @apply bg-red-300 border border-solid border-slate-300 border-t-0 border-l-0 border-r-0 h-[var(--gm-header-height)] lg:h-[var(--gm-header-height-lg)] flex items-stretch;
+  @apply border border-solid border-slate-300 border-t-0 border-l-0 border-r-0 h-[var(--gm-header-height)] lg:h-[var(--gm-header-height-lg)] flex items-stretch;
 }
 
 .site-header-wrapper {

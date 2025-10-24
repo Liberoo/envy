@@ -62,6 +62,7 @@
     "wpackagist-theme/twentytwentyfive": "^1.0",
     "wpperformance/presswind-helpers": "^1.0",
     "wpackagist-plugin/svg-support": "*",
+    "wpackagist-plugin/contact-form-7": "*",
     "roots/wordpress": "6.8.1"
   },
   "require-dev": {

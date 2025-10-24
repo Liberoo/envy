@@ -8,7 +8,7 @@ body {
 }
 
 .main-content {
-  @apply min-h-[40vh] py-16 mt-0;
+  @apply min-h-[40vh] pt-14 mt-0;
 }
 
 .main-content p {
@@ -37,7 +37,11 @@ body {
 /** text selection color */
 
 ::selection {
-  @apply text-white bg-accent;
+  @apply text-white bg-[#83a165];
+}
+
+::-moz-selection {
+  @apply text-white bg-[#83a165];
 }
 
 .wp-block-post-title a,
@@ -179,4 +183,17 @@ strong {
 
 a {
   @apply text-white no-underline;
+}
+
+/* Screen Reader Only - Accessibility */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Visibility Hidden - Alternative to sr-only */
+.visually-hidden {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
 }
