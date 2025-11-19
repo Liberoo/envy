@@ -1,12 +1,21 @@
 /* Main bento grid container */
 .bento {
-  @apply grid grid-cols-1 gap-3 container mx-auto md:grid-cols-6 md:grid-rows-3 md:aspect-[20/9];
+  @apply grid grid-cols-1 gap-3 container mx-auto md:grid-cols-6 md:grid-rows-3 md:aspect-[20/9] px-5;
 }
 
 /* Base bento element styles */
 .bento-element {
-  @apply aspect-video md:aspect-auto bg-white rounded-lg overflow-hidden relative flex justify-center items-center;
+  @apply aspect-video md:aspect-auto bg-white  md:rounded-lg overflow-hidden relative flex justify-center items-center;
   margin-block-start: 0;
+
+  /* Mobile: first element with image - 100% width, 16/9 aspect ratio, no sticky */
+  &:first-child {
+    @apply w-full aspect-[16/9] static md:aspect-auto;
+
+    img {
+      @apply w-full aspect-[16/9] object-cover;
+    }
+  }
 
   /* Image and figure styles */
   .wp-block-image,
@@ -16,7 +25,7 @@
   }
 
   img {
-    @apply object-cover grayscale object-center z-0 transition-transform duration-300;
+    @apply object-cover grayscale object-top z-0 transition-transform duration-300;
   }
 
   /* Gradient overlay for elements with images */

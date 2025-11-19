@@ -58,6 +58,30 @@ function setup()
 
 add_action('init', __NAMESPACE__ . '\setup');
 
+/**
+ * Register custom block styles for buttons
+ */
+function register_button_styles()
+{
+
+    // Register pulse button style
+    register_block_style('core/button', [
+        'name' => 'pulse',
+        'label' => __('Pulse', 'press-wind'),
+        'style_handle' => 'button-pulse-style',
+    ]);
+
+    // Register pulse-reverse button style
+    register_block_style('core/button', [
+        'name' => 'pulse-reverse',
+        'label' => __('Pulse Reverse', 'press-wind'),
+        'style_handle' => 'button-pulse-reverse-style',
+    ]);
+
+}
+
+add_action('init', __NAMESPACE__ . '\register_button_styles');
+
 function block_category($categories)
 {
     array_splice(

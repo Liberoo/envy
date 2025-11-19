@@ -4,7 +4,7 @@
 }
 
 .counter-element {
-  @apply border-lightGray border border-t-0 border-l-0 border-r-0 md:border-r border-solid p-5 md:p-10;
+  @apply border-lightGray border border-t-0 border-l-0 border-r-0 md:border-r border-solid py-5 md:py-10 px-5;
   counter-increment: counter-item;
 }
 

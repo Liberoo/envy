@@ -30,9 +30,9 @@ label:has(textarea:focus) {
 }
 
 input[type="submit"] {
-  @apply border-2 bg-black border-black text-white py-4 uppercase inline-block cursor-pointer w-auto px-10 mx-auto relative duration-500 ease-in-out will-change-[background-color,color];
+  @apply bg-black text-white py-4 relative uppercase inline-block cursor-pointer w-auto px-16 mx-auto relative transition-colors duration-500 ease-in-out will-change-[background-color,color];
   &:hover {
-    @apply bg-white text-black;
+    @apply bg-lightGray text-black;
   }
 }
 
@@ -68,15 +68,18 @@ input:not(:placeholder-shown)::placeholder,
 textarea:not(:placeholder-shown)::placeholder {
   @apply opacity-0;
 }
+.wpcf7-not-valid-tip {
+  @apply absolute;
+}
 
-.creator {
-  @apply flex gap-2 items-center;
+.wpcf7 form .wpcf7-response-output {
+  @apply border-none bg-orange-200 mx-0;
 }
-.creator-image {
-  img {
-    @apply w-[65px] h-[65px] object-cover rounded-full;
-  }
+
+.wpcf7 form .submit-wrapper {
+  @apply relative inline-block;
 }
-.creator-text {
-  @apply m-0;
+
+.wpcf7 .wpcf7-spinner {
+  @apply absolute top-1/2 -translate-y-1/2 right-0;
 }

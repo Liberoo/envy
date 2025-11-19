@@ -56,10 +56,10 @@
 }
 
 .blog-wrapper li .taxonomy-category.wp-block-post-terms {
-  @apply absolute top-5 right-5;
+  @apply absolute top-5 left-0 px-2  flex gap-2 flex-wrap;
 }
 .blog-wrapper li .taxonomy-category.wp-block-post-terms a {
-  @apply text-black bg-lightGray  px-4 py-2 text-sm;
+  @apply text-black bg-lightGray  px-2 py-1 text-[11px];
 }
 .blog-wrapper li .taxonomy-category.wp-block-post-terms a:after {
   @apply hidden;

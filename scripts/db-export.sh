@@ -5,10 +5,19 @@ DB_NAME=$(grep "^DB_NAME=" .env | cut -d"=" -f2 | tr -d "'\"")
 DB_USER=$(grep "^DB_USER=" .env | cut -d"=" -f2 | tr -d "'\"")
 DB_PASSWORD=$(grep "^DB_PASSWORD=" .env | cut -d"=" -f2 | tr -d "'\"")
 
-echo "í³¤ Exporting database: $DB_NAME (user: $DB_USER)"
+echo " Exporting database: $DB_NAME (user: $DB_USER)"
+echo "âš ï¸  This will overwrite existing database.sql file!"
+echo ""
+read -p "Are you sure you want to continue? Type 'yes' to confirm: " confirm
 
+if [ "$confirm" != "yes" ]; then
+    echo "âŒ Export cancelled."
+    exit 1
+fi
+
+echo "ðŸ”„ Starting export..."
 # WAMP usually has no password for root
 mysqldump -u "$DB_USER" "$DB_NAME" > database.sql
 
 echo "âœ… Database exported â†’ database.sql"
-echo "í³Š Size: $(du -h database.sql | cut -f1)"
+echo " Size: $(du -h database.sql | cut -f1)"

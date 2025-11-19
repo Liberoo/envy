@@ -12,3 +12,6 @@
 
 /** patterns */
 @import "./patterns/index.css";
+
+/** components */
+@import "./components/index.css";

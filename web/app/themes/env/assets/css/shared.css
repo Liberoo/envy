@@ -4,7 +4,7 @@ body {
 
 .site-main,
 .main-content {
-  @apply mt-0 mb-32;
+  @apply mt-0;
 }
 
 .main-content {
@@ -172,11 +172,18 @@ pre.shiki code span.line span {
 }
 
 .wrapper {
-  @apply container mx-auto;
+  @apply container mx-auto px-5;
 }
 .wrapper-xl {
   @apply max-w-[1500px];
 }
+.inline-space {
+  @apply px-5;
+}
+.inline-space--mobile {
+  @apply px-5 md:px-0;
+}
+
 strong {
   @apply font-bold;
 }
@@ -184,6 +191,90 @@ strong {
 a {
   @apply text-white no-underline;
 }
+
+/* Disable taxonomy links - make them non-clickable */
+.wp-block-post-terms a {
+  @apply pointer-events-none cursor-default;
+}
+
+/* Re-enable links for portfolio page filtering */
+.portfolio-filter .wp-block-post-terms a {
+  @apply pointer-events-auto cursor-pointer;
+}
+
+/* Portfolio Filter Styles */
+.filter-indicator {
+  @apply bg-gray-100 border border-gray-300 rounded-lg p-4 mb-6 flex justify-between items-center;
+}
+
+.filter-indicator span {
+  @apply font-medium text-gray-700;
+}
+
+.filter-indicator button {
+  @apply bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors;
+}
+
+/* Hide filtered items */
+.filter-active .wp-block-post[style*="display: none"] {
+  @apply hidden;
+}
+
+/* Button Styles */
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+/* Filled Button */
+.btn-filled {
+  @apply bg-black text-white border-2 border-black hover:bg-white hover:text-black focus:ring-black;
+}
+
+/* Outline Button */
+.btn-outline {
+  @apply bg-transparent text-black border-2 border-black hover:bg-black hover:text-white focus:ring-black;
+}
+
+/* Pulse Button */
+.btn-pulse {
+  @apply bg-black text-white border-2 border-black hover:bg-white hover:text-black focus:ring-black;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Button Sizes */
+.btn-sm {
+  @apply px-4 py-2 text-sm;
+}
+
+.btn-lg {
+  @apply px-8 py-4 text-lg;
+}
+
+/* Button States */
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.btn:disabled:hover {
+  @apply transform-none;
+}
+
+/*
 
 /* Screen Reader Only - Accessibility */
 .sr-only {
@@ -196,4 +287,19 @@ a {
   @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
   clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
+}
+
+.no-display {
+  @apply hidden;
+}
+a:not(.wp-block-button__link) {
+  color: inherit;
+  position: relative;
+  transition:
+    color 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
+
+  /* &:hover {
+    filter: invert(0.5);
+  } */
 }

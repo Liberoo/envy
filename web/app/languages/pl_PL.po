@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-10-03 22:11:25+0000\n"
+"PO-Revision-Date: 2025-11-13 13:07:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.3\n"
 "Language: pl\n"
 "Project-Id-Version: WordPress - 6.8.x - Development\n"
 
@@ -570,7 +570,7 @@ msgstr "Błędny host: "
 #. translators: There is a space after the colon.
 #: wp-includes/class-wp-phpmailer.php:68
 msgid "Invalid hostentry: "
-msgstr "Błędne dane hosta: "
+msgstr "Nieprawidłowy wpis hosta: "
 
 #: wp-includes/class-wp-phpmailer.php:66
 msgid "Invalid header name or value"
@@ -3961,7 +3961,7 @@ msgstr "Identyfikator konfiguracji stylów globalnych."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:142
 msgid "No global styles config exist with that id."
-msgstr "Nie istnieje globalna konfiguracja stylów o tym identyfikatorze."
+msgstr "Nie istnieje żadna konfiguracja stylów globalnych o tym identyfikatorze."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:184
 msgid "Sorry, you are not allowed to view this global style."
@@ -8184,7 +8184,7 @@ msgstr "Proszę sprawdzić, czy <strong>adres e-mail administratora</strong> wit
 
 #: wp-login.php:691
 msgid "Administration email verification"
-msgstr "Weryfikacja adresu e-maila do celów administracyjnych"
+msgstr "Weryfikacja adresu e-mail do celów administracyjnych"
 
 #: wp-login.php:662
 msgid "Confirm your administration email"
@@ -16415,10 +16415,6 @@ msgctxt "Comma-separated list of search stopwords in your language"
 msgid "about,an,are,as,at,be,by,com,for,from,how,in,is,it,of,on,or,that,the,this,to,was,what,when,where,who,will,with,www"
 msgstr "a,aby,albo,ale,bądź,bez,bo,być,była,było,były,co,czy,czyli,dla,do,gdy,gdzie,go,i,ich,im,iż,jak,jako,jego,jej,jest,jeśli,już,kiedy,kilka,która,które,który,lecz,lub,ma,mi,mnie,mogą,może,można,na,nad,nam,nas,nawet,nich,nie,nim,niż,o,od,oraz,po,pod,poza,przed,przez,przy,są,się,sobie,swoje,ta,tak,takie,także,tam,te,tego,tej,ten,też,to,tu,tych,tylko,tym,u,w,we,wiele,wielu,więc,z,za,zaś,ze,że"
 
-#: wp-includes/post-template.php:1810
-msgid "This content is password protected. To view it please enter your password below:"
-msgstr "Treść jest chroniona hasłem. Aby ją zobaczyć, proszę poniżej wprowadzić hasło:"
-
 #: wp-includes/class-wp-http-curl.php:283
 #: wp-includes/class-wp-http-streams.php:336
 msgid "Failed to write request to temporary file."
@@ -19225,6 +19221,10 @@ msgstr "%s [aktualna wersja]"
 #: wp-includes/post-template.php:1926 wp-includes/post-template.php:1987
 msgid "%s [Autosave]"
 msgstr "%s [zapisana automatycznie]"
+
+#: wp-includes/post-template.php:1810
+msgid "This content is password protected. To view it please enter your password below:"
+msgstr "Ta treść jest chroniona hasłem. Aby ją wyświetlić, wpisz poniżej swoje hasło:"
 
 #. translators: 'Home' as in a website's home page.
 #: wp-includes/blocks/home-link.php:140 wp-includes/post-template.php:1471

@@ -26,7 +26,7 @@
 }
 
 .hero-content {
-  @apply relative z-20 pb-10 text-2xl;
+  @apply relative z-20 pb-10 text-2xl  block text-center  w-full mb-20 !text-5xl;
 }
 .hero-services {
   @apply list-none;

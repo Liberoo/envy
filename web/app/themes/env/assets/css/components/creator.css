@@ -1,0 +1,11 @@
+.creator {
+  @apply flex gap-2 items-center;
+}
+.creator-image {
+  img {
+    @apply w-[65px] h-[65px] object-cover rounded-full;
+  }
+}
+.creator-text {
+  @apply m-0;
+}
