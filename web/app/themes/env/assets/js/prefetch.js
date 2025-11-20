@@ -2,10 +2,7 @@ let hasDebug = false
 
 const logger = (message) => {
   if (hasDebug) {
-    console.log(
-      `%c 🚀 ${message}`,
-      'color: blue; background: #F5F5DC;padding: 3px 6px; border-radius: 4px;',
-    )
+    // Debug logging disabled
   }
 }
 

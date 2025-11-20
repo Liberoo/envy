@@ -63,6 +63,8 @@
     "wpperformance/presswind-helpers": "^1.0",
     "wpackagist-plugin/svg-support": "*",
     "wpackagist-plugin/contact-form-7": "*",
+    "wpackagist-plugin/slim-seo": "*",
+    "wpackagist-plugin/duplicate-post": "*",
     "roots/wordpress": "6.8.1"
   },
   "require-dev": {

@@ -6,8 +6,6 @@ wp.domReady(() => {
 
 	// sometime unregister don't work without that
 	window._wpLoadBlockEditor.then(() => {
-		console.log("Gutenberg ready !");
-
 		wp.blocks.unregisterBlockStyle("core/image", ["default", "rounded"]);
 	});
 

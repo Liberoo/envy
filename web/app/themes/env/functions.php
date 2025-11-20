@@ -21,10 +21,10 @@ require_once dirname(__FILE__) . '/inc/binding-meta.php';
 require_once dirname(__FILE__) . '/post-type/portfolio.php';
 require_once dirname(__FILE__) . '/post-type/training.php';
 
-// pwa icons
-if (file_exists(dirname(__FILE__) . '/inc/pwa_head.php')) {
-  include dirname(__FILE__) . '/inc/pwa_head.php';
-}
+// pwa icons - disabled, using WordPress favicon settings instead
+// if (file_exists(dirname(__FILE__) . '/inc/pwa_head.php')) {
+//   include dirname(__FILE__) . '/inc/pwa_head.php';
+// }
 
 /**
  * Theme setup.

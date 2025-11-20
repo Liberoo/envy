@@ -13,9 +13,7 @@ function loadInteractivityStore(selector, storePath, storeName) {
   document.querySelectorAll(selector).forEach((element) => {
     const observer = new IntersectionObserver(async (entries) => {
       if (entries[0].isIntersecting) {
-        console.log(`🔄 Ładowanie ${storeName} store...`);
         await import(storePath);
-        console.log(`✅ ${storeName} załadowany!`);
         observer.disconnect();
       }
     });
@@ -79,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
           setMenuItemsTabIndex(0); // Dodaj do tab order
         }, 100); // Małe opóźnienie żeby animacja się rozpoczęła
       }
-
-      console.log("🍔 Menu toggled:", !isExpanded ? "opened" : "closed");
     });
 
     // Close menu when clicking outside
@@ -95,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
           mainMenu.setAttribute("aria-hidden", "true");
         }
         navigation.classList.remove("active");
-        console.log("🍔 Menu closed by outside click");
       }
     });
 
@@ -109,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         navigation.classList.remove("active");
         menuToggle.focus(); // Return focus to button
-        console.log("🍔 Menu closed by Escape key");
       }
 
       // Handle Tab navigation within menu - focus trap
@@ -141,6 +135,5 @@ document.addEventListener("DOMContentLoaded", function () {
     menuItems.forEach((item) => {
       item.setAttribute("tabindex", value);
     });
-    console.log(`🔧 Menu items tabindex set to: ${value}`);
   }
 });

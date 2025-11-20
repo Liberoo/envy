@@ -18,8 +18,10 @@ const getconfig = () => {
 
 // find theme dir name
 export function getThemDir() {
-	const _path = process.cwd().split("/");
-	return _path[_path.length - 1];
+	// Use __dirname to get the theme directory name
+	// __dirname is js-helpers, so go up one level to get theme directory
+	const themePath = path.resolve(__dirname, "..");
+	return path.basename(themePath);
 }
 
 const config = await getconfig();
@@ -76,11 +78,9 @@ const configuration = {
 try {
 	// delete dist
 	fs.rmSync(target, { recursive: true, force: true });
-	console.log(`${target} is deleted!`);
 
 	// create dist directory
 	fs.mkdirSync(target);
-	console.log(`${target} is created.`);
 
 	const response = await favicons(source, configuration);
 
@@ -120,5 +120,5 @@ try {
   `,
 	);
 } catch (error) {
-	console.log(error.message);
+	// Error handling
 }

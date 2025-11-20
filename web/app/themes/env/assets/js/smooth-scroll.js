@@ -52,8 +52,6 @@ function initSmoothScroll() {
 
   // Expose lenis instance globally for potential external use
   window.lenis = lenis;
-
-  console.log("✅ Lenis smooth scroll initialized");
 }
 
 // Initialize when DOM is ready
