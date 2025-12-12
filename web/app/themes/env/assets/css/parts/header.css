@@ -165,3 +165,27 @@
     }
   }
 }
+/* main:after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  height: 100px;
+  z-index: 20;
+  -webkit-mask-image: linear-gradient(
+    rgba(0, 0, 0, 0) 75%,
+    rgb(0, 0, 0) 87.5%,
+    rgb(0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 0) 75%,
+    rgb(0, 0, 0) 87.5%,
+    rgb(0, 0, 0) 100%
+  );
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(3.5px);
+  backdrop-filter: blur(3.5px);
+  height: 250px;
+} */
