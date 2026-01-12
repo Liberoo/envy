@@ -9,13 +9,6 @@ echo " Importing to database: $DB_NAME (user: $DB_USER)"
 echo "⚠️  WARNING: This will OVERWRITE all existing data in the database!"
 echo "⚠️  All current data will be LOST and replaced with database.sql content!"
 echo ""
-read -p "Are you sure you want to continue? Type 'yes' to confirm: " confirm
-
-if [ "$confirm" != "yes" ]; then
-    echo "❌ Import cancelled."
-    exit 1
-fi
-
 echo "🔄 Starting import..."
 # Create database if not exists and import
 mysql -u "$DB_USER" -e "CREATE DATABASE IF NOT EXISTS \`$DB_NAME\`;"
