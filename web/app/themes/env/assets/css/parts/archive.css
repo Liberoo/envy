@@ -2,12 +2,7 @@
   @apply container mx-auto;
 }
 .archive ul {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 wrapper;
-}
-
-/* Feature first post: full width on tablet (2 cols) and desktop (3 cols) */
-.archive ul li:first-child {
-  @apply md:col-span-2 lg:col-span-3;
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
 }
 
 /* Base image styles: 4/3 aspect ratio and cover fit */
@@ -15,7 +10,15 @@
   @apply w-full aspect-[4/3] object-cover;
 }
 
+/* Feature first post: full width on tablet (2 cols) and desktop (3 cols) */
+.archive.archive-feature ul li:first-child {
+  @apply md:col-span-2 lg:col-span-3;
+}
+
 /* Adjust aspect ratio for the first post's image to keep its height consistent with others */
-.archive ul li:first-child img {
+.archive.archive-feature ul li:first-child img {
   @apply md:aspect-[8/3] lg:aspect-[4/1];
+}
+:root :where(.is-layout-flow) > .archive li {
+  margin-block-start: 0;
 }

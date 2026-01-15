@@ -1,5 +1,3 @@
-import './relatedPost.js';
-
 wp.domReady(() => {
 	// unregister round button style
 	// wp.blocks.unregisterBlockStyle('core/button', 'rounded')

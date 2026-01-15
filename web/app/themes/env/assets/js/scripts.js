@@ -136,4 +136,25 @@ document.addEventListener("DOMContentLoaded", function () {
       item.setAttribute("tabindex", value);
     });
   }
+
+  /**
+   * Scroll Animations - Intersection Observer for .js-animation
+   */
+  const animationObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("js-animation--open");
+          animationObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Trigger when 10% of the element is visible
+    },
+  );
+
+  document.querySelectorAll(".js-animation").forEach((element) => {
+    animationObserver.observe(element);
+  });
 });

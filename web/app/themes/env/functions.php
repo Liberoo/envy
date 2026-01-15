@@ -11,9 +11,6 @@ require_once dirname(__FILE__) . '/inc/gutenberg.php';
 require_once dirname(__FILE__) . '/inc/login_assets.php';
 require_once dirname(__FILE__) . '/inc/sortable.php';
 
-// variations
-require_once dirname(__FILE__) . '/inc/variations_blocks.php';
-
 // binding meta
 require_once dirname(__FILE__) . '/inc/binding-meta.php';
 

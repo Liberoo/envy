@@ -53,3 +53,7 @@ footer.footer {
 main:not(.blog-main) {
   @apply relative z-[2] bg-white min-h-screen md:!mb-[600px] xl:!mb-[570px];
 }
+
+footer.footer {
+  margin-block-start: 0;
+}

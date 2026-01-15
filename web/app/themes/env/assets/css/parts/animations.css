@@ -1,0 +1,32 @@
+.js-animation {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateX(60px); /* Default: slide from right */
+  /* Transition for movement (transform and opacity) */
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.3s ease-out 0.4s; /* Blur removal starts after movement is almost done */
+  will-change: opacity, filter, transform;
+}
+
+.js-animation-left {
+  transform: translateX(-60px);
+}
+
+.js-animation-right {
+  transform: translateX(60px);
+}
+
+.js-animation-up {
+  transform: translateY(80px);
+}
+
+.js-animation-down {
+  transform: translateY(-80px);
+}
+
+.js-animation.js-animation--open {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0, 0);
+}

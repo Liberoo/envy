@@ -62,7 +62,7 @@
   @apply relative z-10;
 }
 .section-footer-margin {
-  @apply lg:!mb-[600px] xl:!mb-[570px];
+  @apply !mb-[0] md:!mb-[575px] xl:!mb-[545px];
 }
 
 .blog-header.cols.cols--no-gap {
