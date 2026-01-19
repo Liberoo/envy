@@ -65,7 +65,8 @@
     "wpackagist-plugin/contact-form-7": "*",
     "wpackagist-plugin/slim-seo": "*",
     "wpackagist-plugin/duplicate-post": "*",
-    "roots/wordpress": "6.8.1"
+	"wpackagist-plugin/updraftplus": "*",
+    "roots/wordpress": "6.9"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

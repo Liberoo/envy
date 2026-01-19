@@ -2,10 +2,6 @@
 
 namespace WP_Performance;
 
-if (! defined('WP_ENV')) {
-  define('WP_ENV', 'development');
-}
-
 // inc, you can modify this files like you want
 require_once dirname(__FILE__) . '/inc/gutenberg.php';
 require_once dirname(__FILE__) . '/inc/login_assets.php';
@@ -48,16 +44,6 @@ if (class_exists('PressWind\PWVite')) {
     is_ts: false
   );
 }
-
-/** disable caching wp query */
-function disable_caching($wp_query)
-{
-  if (WP_ENV === 'development') {
-    $wp_query->query_vars['cache_results'] = false;
-  }
-}
-
-add_action('parse_query', __NAMESPACE__ . '\disable_caching');
 
 /**
  * Initialize block styles and other init functionality
@@ -142,15 +128,6 @@ function register_richtext_example_block() {
     $block_path = get_theme_file_path('blocks/richtext-example');
     if (file_exists($block_path . '/block.json')) {
         register_block_type($block_path);
-        
-        // Debug info
-        if (WP_ENV === 'development') {
-            error_log('✅ RichText Example Block registered: ' . $block_path);
-        }
-    } else {
-        if (WP_ENV === 'development') {
-            error_log('❌ RichText Example Block NOT found: ' . $block_path);
-        }
     }
 }
 
