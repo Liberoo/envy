@@ -1,0 +1,315 @@
+/* Homepage entrance hero animation. */
+
+.entrance-hero {
+  --eh-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --eh-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  margin-inline: auto;
+  height: 80vh;
+  min-height: 520px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--wp--preset--color--white);
+}
+
+.entrance-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: var(--wp--preset--color--dark-gray);
+  animation: eh-black-sweep 650ms var(--eh-ease) 1950ms both;
+}
+
+.entrance-hero .entrance-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 38px;
+  margin: 0;
+}
+
+.entrance-hero .entrance-hero__logo {
+  position: relative;
+  z-index: 3;
+  mix-blend-mode: difference;
+  width: 200px;
+  height: 250px;
+  margin: 0;
+}
+
+.entrance-hero .entrance-hero__sq {
+  position: absolute;
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  min-height: 0;
+  background: var(--wp--preset--color--white);
+  animation: var(--eh-in) var(--eh-dur) var(--eh-back) var(--eh-delay) both;
+}
+
+.entrance-hero__sq--bar {
+  --eh-in: eh-bar-in;
+  --eh-dur: 360ms;
+  left: 3px;
+  transform-origin: center bottom;
+}
+
+.entrance-hero__sq--bar1 {
+  --eh-delay: 300ms;
+  top: 203px;
+}
+
+.entrance-hero__sq--bar2 {
+  --eh-delay: 374ms;
+  top: 153px;
+}
+
+.entrance-hero__sq--bar3 {
+  --eh-delay: 448ms;
+  top: 103px;
+}
+
+.entrance-hero__sq--bar4 {
+  --eh-delay: 522ms;
+  top: 53px;
+}
+
+.entrance-hero__sq--bar5 {
+  --eh-delay: 596ms;
+  top: 3px;
+}
+
+.entrance-hero__sq--vertex {
+  --eh-in: eh-vertex-in;
+  --eh-dur: 400ms;
+  --eh-delay: 820ms;
+  left: 53px;
+  top: 103px;
+  transform-origin: center center;
+}
+
+.entrance-hero__sq--mid-down {
+  --eh-in: eh-arm-down-in;
+  --eh-dur: 460ms;
+  --eh-delay: 1150ms;
+  left: 103px;
+  top: 153px;
+  transform-origin: left top;
+}
+
+.entrance-hero__sq--mid-up {
+  --eh-in: eh-arm-up-in;
+  --eh-dur: 460ms;
+  --eh-delay: 1150ms;
+  left: 103px;
+  top: 53px;
+  transform-origin: left bottom;
+}
+
+.entrance-hero__sq--tip-down {
+  --eh-in: eh-arm-down-in;
+  --eh-dur: 460ms;
+  --eh-delay: 1450ms;
+  left: 153px;
+  top: 203px;
+  transform-origin: left top;
+}
+
+.entrance-hero__sq--tip-up {
+  --eh-in: eh-arm-up-in;
+  --eh-dur: 460ms;
+  --eh-delay: 1450ms;
+  left: 153px;
+  top: 3px;
+  transform-origin: left bottom;
+}
+
+.entrance-hero .entrance-hero__caption {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  text-align: center;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.entrance-hero .entrance-hero__caption p {
+  margin: 0;
+  font-family: inherit;
+  color: var(--wp--preset--color--white);
+}
+
+.entrance-hero__caption-name {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  padding-left: 0.24em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.entrance-hero__caption-text {
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.entrance-hero .entrance-hero__contact-wrap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  margin: 0;
+}
+
+.entrance-hero .wp-block-button.entrance-hero__contact {
+  margin: 0;
+}
+
+.entrance-hero .wp-block-button.entrance-hero__contact .wp-block-button__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(220px, 30vw, 460px);
+  height: clamp(56px, 6.5vw, 100px);
+  padding: 0;
+  background: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--black);
+  border-radius: 0;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+  animation: eh-contact-text 450ms var(--eh-ease) 2600ms both;
+}
+
+.entrance-hero .wp-block-button.entrance-hero__contact .wp-block-button__link:hover {
+  background-color: var(--wp--preset--color--light-gray);
+}
+
+.entrance-hero .wp-block-button.entrance-hero__contact .wp-block-button__link::after {
+  background-color: currentColor;
+}
+
+.entrance-hero .wp-block-button.entrance-hero__contact .wp-block-button__link::before {
+  content: none;
+}
+
+body:has(.entrance-hero) .navigation {
+  animation: eh-nav-in 400ms cubic-bezier(0.22, 1, 0.36, 1) 1950ms both;
+}
+
+@keyframes eh-black-sweep {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+@keyframes eh-bar-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scaleY(0.2) scaleX(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes eh-vertex-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.4);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes eh-arm-up-in {
+  from {
+    opacity: 0;
+    transform: rotate(-115deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes eh-arm-down-in {
+  from {
+    opacity: 0;
+    transform: rotate(115deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes eh-nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-110%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes eh-contact-text {
+  from {
+    color: var(--wp--preset--color--white);
+  }
+
+  to {
+    color: var(--wp--preset--color--black);
+  }
+}
+
+html.eh-seen .entrance-hero .entrance-hero__sq {
+  animation: none;
+}
+
+html.eh-seen .entrance-hero::after {
+  animation-delay: 150ms;
+}
+
+html.eh-seen body:has(.entrance-hero) .navigation {
+  animation-delay: 150ms;
+}
+
+html.eh-seen .entrance-hero .wp-block-button.entrance-hero__contact .wp-block-button__link {
+  animation-delay: 800ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entrance-hero,
+  .entrance-hero::after,
+  .entrance-hero *,
+  .entrance-hero *::before,
+  .entrance-hero *::after,
+  body:has(.entrance-hero) .navigation {
+    animation: none !important;
+  }
+}

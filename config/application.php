@@ -120,6 +120,10 @@ Config::define('NONCE_SALT', env('NONCE_SALT'));
  * Custom Settings
  */
 Config::define('AUTOMATIC_UPDATER_DISABLED', true);
+
+// MailerLite (newsletter) — patrz web/app/themes/env/inc/newsletter.php
+Config::define('MAILERLITE_API_KEY', env('MAILERLITE_API_KEY') ?: '');
+Config::define('MAILERLITE_GROUP_ID', env('MAILERLITE_GROUP_ID') ?: '');
 Config::define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 
 // Disable the plugin and theme file editor in the admin

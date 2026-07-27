@@ -28,3 +28,16 @@ auth.json
 wp-cli.local.yml
 
 /web/app/updraft/
+
+# Design sources & local archives (do not commit; keep outside the web root)
+/Animacja logo z etapami/
+/Modernizacja strony głównej/
+/Modernizacja strony głównej.zip
+
+# Security plugin (All-in-One Security) artifacts
+/web/app/aiowps_backups/
+/web/app/uploads/aios/
+
+# Claude Code
+.claude/settings.local.json
+.cursor/

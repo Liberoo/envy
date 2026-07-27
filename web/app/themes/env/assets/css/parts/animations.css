@@ -1,32 +1,62 @@
-.js-animation {
+/* Scroll-reveal animation utilities (.js-animation). */
+
+body:not(.wp-admin):not(.editor-styles-wrapper) .js-animation {
   opacity: 0;
   filter: blur(10px);
-  transform: translateX(60px); /* Default: slide from right */
-  /* Transition for movement (transform and opacity) */
+  transform: translateX(60px);
+
   transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
               transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-              filter 0.3s ease-out 0.4s; /* Blur removal starts after movement is almost done */
+              filter 0.3s ease-out 0.4s;
   will-change: opacity, filter, transform;
 }
 
-.js-animation-left {
+body:not(.wp-admin):not(.editor-styles-wrapper) .js-animation-left {
   transform: translateX(-60px);
 }
 
-.js-animation-right {
+body:not(.wp-admin):not(.editor-styles-wrapper) .js-animation-right {
   transform: translateX(60px);
 }
 
-.js-animation-up {
+body:not(.wp-admin):not(.editor-styles-wrapper) .js-animation-up {
   transform: translateY(80px);
 }
 
-.js-animation-down {
+body:not(.wp-admin):not(.editor-styles-wrapper) .js-animation-down {
   transform: translateY(-80px);
 }
 
-.js-animation.js-animation--open {
+body:not(.wp-admin):not(.editor-styles-wrapper) .js-animation.js-animation--open {
   opacity: 1;
   filter: blur(0);
   transform: translate(0, 0);
+}
+
+[data-graytext] {
+  transition: color 1.1s ease;
+}
+
+[data-graytext].is-gray {
+  color: #8a8a8a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.wp-admin):not(.editor-styles-wrapper) .js-animation {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
+  [data-graytext] {
+    transition: none;
+  }
+}
+
+.editor-styles-wrapper .js-animation,
+.wp-admin .js-animation {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
 }

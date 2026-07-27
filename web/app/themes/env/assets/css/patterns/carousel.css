@@ -1,5 +1,7 @@
+/* Carousel pattern. */
+
 .wpp-carousel {
-  /* @apply px-2; */
+
 }
 
 .wpp-carousel ul {
@@ -22,12 +24,9 @@
   @apply flex-1;
 }
 
-/** content */
-
 .wpp-carousel ul li.wp-block-post .wp-block-post-excerpt {
   @apply mt-auto justify-self-end;
 }
-/** image */
 
 .wpp-carousel ul li.wp-block-post figure {
   @apply flex object-cover object-center w-full h-80;

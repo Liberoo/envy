@@ -1,14 +1,13 @@
-/* Main bento grid container */
+/* Bento grid pattern. */
+
 .bento {
   @apply grid grid-cols-1 gap-3 container mx-auto md:grid-cols-6 md:grid-rows-3 md:aspect-[20/9] px-5;
 }
 
-/* Base bento element styles */
 .bento-element {
   @apply aspect-video md:aspect-auto bg-white  md:rounded-lg overflow-hidden relative flex justify-center items-center;
   margin-block-start: 0;
 
-  /* Mobile: first element with image - 100% width, 16/9 aspect ratio, no sticky */
   &:first-child {
     @apply w-full aspect-[16/9] static md:aspect-auto;
 
@@ -17,7 +16,6 @@
     }
   }
 
-  /* Image and figure styles */
   .wp-block-image,
   .wp-blcok-image.hero-noise,
   img {
@@ -28,7 +26,6 @@
     @apply object-cover grayscale object-top z-0 transition-transform duration-300;
   }
 
-  /* Gradient overlay for elements with images */
   &:has(img):after {
     @apply absolute inset-0 bg-gradient-to-t from-black opacity-80 md:opacity-50 transition-opacity duration-300 ease-in-out to-transparent;
     content: "";
@@ -37,7 +34,6 @@
     @apply md:translate-y-[20px] md:opacity-0;
   }
 
-  /* Hover effects */
   &:hover img {
     @apply scale-105;
   }
@@ -48,12 +44,10 @@
     @apply translate-y-0 opacity-100;
   }
 
-  /* Counter heading styles */
   .counter-heading {
     @apply before:hidden;
   }
 
-  /* Link wrapper styles */
   .bento-link {
     @apply w-full h-full absolute z-10 transition-opacity duration-300 ease-in-out transition-transform;
 
@@ -62,20 +56,17 @@
     }
   }
 
-  /* WordPress block image styles */
   .wp-block-image {
     @apply z-0;
   }
 }
 
-/* Mobile layout - hide elements 2, 5, 8 */
 .bento-element:nth-child(2),
 .bento-element:nth-child(5),
 .bento-element:nth-child(8) {
   @apply hidden md:flex;
 }
 
-/* Grid positioning for individual bento elements - tablet and up */
 .bento-element:nth-child(1) {
   @apply md:[grid-area:1/1/2/3];
 }

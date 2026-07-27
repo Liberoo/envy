@@ -1,0 +1,10 @@
+/* Editor entry: shared styles first, then editor-only overrides.
+ *
+ * Compiled by the watch:editor / build:editor scripts into style-editor.css,
+ * which inc/gutenberg.php registers via add_editor_style(). The frontend
+ * entry is styles.css (imported by main.js and bundled by Vite) — it does not
+ * import this file, so anything under ./editor/ stays out of the frontend.
+ */
+
+@import "./styles.css";
+@import "./editor/index.css";

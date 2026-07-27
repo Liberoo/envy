@@ -1,0 +1,19 @@
+/* Manifest pattern. */
+
+.env-manifest {
+  @apply bg-white text-primary;
+}
+
+.env-manifest .env-kicker {
+  margin-bottom: 34px;
+}
+
+.env-manifest .env-manifest__text {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-weight: 500;
+  font-size: clamp(1.75rem, 4.9vw, 3.625rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 1000px;
+}

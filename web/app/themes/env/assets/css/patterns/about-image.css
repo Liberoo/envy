@@ -1,3 +1,5 @@
+/* About-image pattern. */
+
 .about-image {
   @apply relative container mx-auto;
 }

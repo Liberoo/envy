@@ -1,0 +1,10 @@
+{
+	"servers": {
+		"mailerlite": {
+			"gallery": false,
+			"url": "https://mcp.mailerlite.com/mcp",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}

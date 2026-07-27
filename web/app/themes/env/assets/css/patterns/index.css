@@ -1,5 +1,6 @@
+/* Pattern stylesheet imports. */
+
 @import "./carousel.css";
-@import "./github-infos.css";
 @import "./video-noise.css";
 @import "./paragraph-text.css";
 @import "./scrolling-text.css";
@@ -11,3 +12,12 @@
 @import "./faq.css";
 @import "./blog.css";
 @import "./bento.css";
+@import "./mockup-desktop.css";
+@import "./entrance-hero.css";
+@import "./manifest.css";
+@import "./marquee.css";
+@import "./about.css";
+@import "./portfolio-home.css";
+@import "./cta.css";
+@import "./newsletter.css";
+@import "./kontakt.css";

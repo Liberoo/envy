@@ -1,3 +1,5 @@
+/* Template-part stylesheet imports. */
+
 @import "./header.css";
 @import "./footer.css";
 @import "./forms.css";
@@ -5,3 +7,4 @@
 @import "./blog.css";
 @import "./archive.css";
 @import "./animations.css";
+@import "./portfolio.css";

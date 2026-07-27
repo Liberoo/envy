@@ -1,6 +1,6 @@
 <?php
 
-namespace WP_Performance\Inc;
+namespace Env\Inc;
 
 /**
  * load custom css for login page
@@ -19,3 +19,15 @@ function login_assets(): void
     }
 }
 add_action('init', __NAMESPACE__.'\login_assets');
+
+function login_header_url(): string
+{
+    return home_url('/');
+}
+add_filter('login_headerurl', __NAMESPACE__ . '\login_header_url');
+
+function login_header_text(): string
+{
+    return get_bloginfo('name');
+}
+add_filter('login_headertext', __NAMESPACE__ . '\login_header_text');

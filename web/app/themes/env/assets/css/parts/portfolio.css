@@ -1,0 +1,344 @@
+/* Portfolio single (case study) and archive layout. */
+
+.portfolio-heading{
+
+    h1{
+        font-size: clamp(5rem, 2.0833rem + 9.7222vw, 9.375rem);
+        @apply text-black;
+    }
+}
+
+.portfolio-info{
+    @apply flex flex-col lg:flex-row  justify-between lg:items-end text-black gap-5 m-0 mt-5 lg:mt-0;
+}
+.portfolio-tags{
+    @apply flex flex-row flex-wrap ;
+}
+.portfolio-tags p, .portfolio-tags div{
+    @apply m-0 font-bold  ;
+}
+p.portfolio-info-title {
+    @apply opacity-60;
+}
+p.portfolio-info-title:not(:first-child):before{
+    content: "/";
+    @apply font-bold mx-2 xl:mx-4;
+
+}
+.portfolio-info-taxonomy{
+    @apply flex flex-row gap-2;
+}
+.portfolio-info a{
+    @apply font-bold text-black;
+}
+
+.portfolio-info .wp-block-buttons {
+    flex:0 0 auto;
+}
+
+.portfolio-glass{
+    @apply w-full rounded-[30px] overflow-hidden p-0 my-24 relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    figure{
+        @apply w-full h-full m-0;
+    }
+img{
+        @apply w-full h-full object-cover;
+
+}
+
+}
+
+.safari {
+    @apply relative max-w-[900px] mx-auto rounded-b-[5px];
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    img{
+        @apply w-full;
+        animation:website-scroll 15s ease-in-out infinite;
+
+    }
+}
+
+.safari::after {
+    content: "";
+    position: absolute;
+    top: -7%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin:auto;
+    height: auto;
+    aspect-ratio: 1280 / 53;
+    background-image: url("./../../assets/media/toolbar.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.safari-parent{
+    @apply overflow-hidden w-full aspect-video rounded-b-[20px];
+}
+
+@keyframes website-scroll{
+    0%{
+        transform:translateY(0);
+
+    }
+    15%{
+        transform:translateY(0)
+    }
+    85%{
+        transform:translateY(-79.5%);
+    }
+    90%{
+        transform:translateY(-79.5%);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.portfolio-stats__wrapper{
+    @apply flex justify-center flex-col lg:flex-row gap-2 ;
+}
+
+.portfolio-stats__element{
+    @apply flex-1 rounded-[15px] m-0;
+}
+
+.portfolio-stats-one{
+    @apply flex flex-col gap-2 p-2 overflow-hidden bg-black/10;
+}
+
+.portfolio-stats-one__image{
+    @apply basis-full overflow-hidden rounded-[15px];
+    img,figure{
+        @apply w-full h-full object-cover object-top;
+    }
+}
+.portfolio-stats-one__list{
+    @apply rounded-[15px] bg-white text-black m-0 p-2 text-base font-normal px-5;
+}
+
+.portfolio-stats-two{
+
+    @apply m-0 flex flex-col justify-evenly gap-2 p-2;
+}
+.portfolio-stats-two > .wp-block-group{
+    @apply m-0 text-black flex flex-row justify-between items-start bg-black/5 rounded-[15px] h-full px-5 py-2.5;
+}
+
+.portfolio-stats-two > .wp-block-group p{
+    @apply leading-none m-0;
+}
+.portfolio-stats-two > .wp-block-group p:not(.counter){
+    @apply text-xs text-black/50 font-bold lowercase pb-2 mr-5;
+}
+.portfolio-stats-two > .wp-block-group .counter{
+    @apply font-semibold text-black text-[45px] min-w-[150px] h-full block my-auto flex items-center;
+}
+   .portfolio-stats-two > .wp-block-group .counter:after{
+content:"%";
+font-size:30px;
+color:rgba(0,0,0,0.5);
+       }
+
+.portfolio-stats-three{
+    @apply bg-black/10;
+}
+.portfolio-stats-three h3, .portfolio-stats-three p{
+    @apply m-0;
+}
+.portfolio-stats-three li{
+    @apply bg-white px-5 box-border py-5 rounded-[15px];
+}
+.portfolio-stats-three ul{
+    @apply list-none pl-0 p-2 ps-0 flex justify-between gap-2 flex-col box-border;
+}
+.portfolio-stats-three ul span{
+    @apply text-[25px] font-bold;
+}
+
+   .portfolio-stats-four{
+    @apply bg-black flex justify-center items-center flex-col p-5;
+   }
+   .portfolio-stats-four figure, .portfolio-stats-four > div {
+
+   }
+   .portfolio-stats-four img{
+  @apply max-w-[250px];
+   }
+   .portfolio-stats-four > .wp-block-group {
+ @apply flex justify-center flex-col;
+         }
+
+   .portfolio-stats-four > .wp-block-group >p{
+@apply text-white text-[25px];
+     }
+
+     .entry-content ul:not(.wp-block-post-template){
+        @apply p-2;
+     }
+
+.env-case {
+  background: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
+}
+
+.env-case .env-case__header {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: clamp(60px, 8vw, 90px) clamp(20px, 4vw, 40px) 48px;
+}
+
+.env-case .env-case__top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.env-case .env-case__back {
+  margin: 0;
+}
+
+.env-case .env-case__back a {
+  font-family: var(--wp--preset--font-family--jetbrains-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #595959;
+  text-decoration: none;
+}
+
+.env-case .env-case__type {
+  margin: 0;
+  font-family: var(--wp--preset--font-family--jetbrains-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
+  padding: 6px 11px;
+}
+
+.env-case .env-case__type a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.env-case h1.env-case__title {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 6.5vw, 4.875rem);
+  line-height: 0.98;
+  padding-bottom: 0.08em;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--wp--preset--color--primary);
+}
+
+.env-case .env-case__lead {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #4a4a4a;
+  margin: 26px 0 0;
+  max-width: 680px;
+}
+
+.env-case .env-case__lead p {
+  margin: 0;
+}
+
+.env-case .env-case__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px clamp(36px, 5vw, 64px);
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 36px 0;
+  margin-top: 40px;
+}
+
+.env-case .env-case__meta-label {
+  font-family: var(--wp--preset--font-family--jetbrains-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  margin: 0 0 10px;
+}
+
+.env-case .env-case__meta-value {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+}
+
+.env-case .env-case__feature {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+
+.env-case .env-case__feature figure {
+  margin: 0;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.env-case .env-case__feature img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.env-case .env-case__content {
+  padding-top: clamp(40px, 6vw, 70px);
+}
+
+.env-portfolio.env-portfolio--dark {
+  padding: clamp(80px, 10vw, 120px) 0;
+  margin-top: clamp(70px, 9vw, 110px);
+}
+
+.env-portfolio.env-portfolio--dark .env-portfolio__list {
+  border-top: 1px solid #2a2a2a;
+}
+
+.env-portfolio.env-portfolio--dark .env-portfolio__list > li {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.env-portfolio.env-portfolio--dark .env-portfolio__title,
+.env-portfolio.env-portfolio--dark .env-portfolio__title a {
+  color: var(--wp--preset--color--white);
+}
+
+.env-portfolio.env-portfolio--dark .env-portfolio__cat {
+  color: #8f8f8f;
+}
+
+@media (max-width: 782px) {
+  .env-case .env-case__meta {
+    gap: 20px 32px;
+  }
+}
+
+.env-case .env-case__meta-item:has(.env-case__meta-value:empty) {
+  display: none;
+}
+
+.env-case .env-case__meta:not(:has(.env-case__meta-value:not(:empty))) {
+  display: none;
+}
+
+main.env-case {
+  @apply md:!mb-0 xl:!mb-0;
+}

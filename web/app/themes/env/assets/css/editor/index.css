@@ -1,0 +1,25 @@
+/* Editor-only styles.
+ *
+ * Nothing here reaches the frontend: this folder is imported only by
+ * assets/css/editor.css, which compiles to style-editor.css and is loaded
+ * exclusively through add_editor_style() in inc/gutenberg.php. The frontend
+ * bundle is built from assets/css/styles.css and never sees these rules.
+ *
+ * Scoping: Gutenberg wraps every selector it receives in
+ * :where(.editor-styles-wrapper) — but :where() contributes no specificity,
+ * so an auto-scoped rule ties with the shared rule it is meant to override
+ * and loses on source order. Write the class yourself when overriding
+ * anything from the shared stylesheet; core skips selectors that already
+ * contain .editor-styles-wrapper (ignoredSelectors in
+ * EDITOR_STYLE_TRANSFORM_OPTIONS), so there is no double-prefixing.
+ *
+ * Pair it with .wp-admin for the non-iframed editor, where the canvas is not
+ * inside the iframe body that carries .editor-styles-wrapper.
+ */
+
+/* Marquee runs on a CSS animation that makes the block impossible to select
+ * or edit while it scrolls. Freeze it in the editor. */
+.editor-styles-wrapper .env-marquee__track,
+.wp-admin .env-marquee__track {
+  animation: none !important;
+}

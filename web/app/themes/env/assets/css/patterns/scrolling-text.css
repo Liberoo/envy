@@ -1,3 +1,5 @@
+/* Scrolling-text pattern. */
+
 .scrolling-text-container {
   @apply w-full overflow-hidden  py-4 relative top-[50px] max-w-[515px];
 }
@@ -47,7 +49,6 @@
   }
 }
 
-/* Variants - różne prędkości */
 .scrolling-text-slow .scrolling-text-wrapper {
   animation-duration: 35s;
 }
@@ -56,7 +57,6 @@
   animation-duration: 15s;
 }
 
-/* Color variants z dziedziczeniem */
 .scrolling-text-primary {
   @apply text-black;
 }
@@ -69,9 +69,6 @@
   @apply bg-gray-800 text-gray-100;
 }
 
-/* Dodatkowe opcje stylowania */
-
-/* Różne tła */
 .scrolling-text-transparent {
   @apply bg-transparent text-gray-800;
 }

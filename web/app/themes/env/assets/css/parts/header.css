@@ -1,5 +1,14 @@
+/* Site header: logo, navigation and mobile menu. */
+
 .navigation {
-  @apply h-[60px]  fixed z-50 w-full;
+  @apply h-[60px] fixed top-0 left-0 z-50 w-full;
+}
+
+body.admin-bar .navigation {
+  top: var(--wp-admin--admin-bar--height, 32px);
+}
+
+.navigation {
 
   .navigation-header {
     @apply w-full h-full bg-darkGray flex justify-between items-center px-10 py-5;
@@ -18,7 +27,7 @@
         content: "";
         width: 15px;
         height: 15px;
-        background-color: white;
+        background-color: var(--wp--preset--color--white);
         position: absolute;
         right: -5px;
         top: 50%;
@@ -47,7 +56,7 @@
     @apply text-black;
     &:after {
       transform: translate(-50%, -50%) rotate(135deg);
-      background-color: black;
+      background-color: var(--wp--preset--color--black);
     }
   }
   .navigation-content-wrapper {
@@ -120,7 +129,6 @@
             transform 0.5s 0.2s ease-in-out;
         }
 
-        /* Stopniowe opóźnienie dla każdego kolejnego elementu */
         &:nth-child(1) a {
           transition:
             opacity 0.5s 0.6s ease-in-out,
@@ -165,27 +173,3 @@
     }
   }
 }
-/* main:after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 1;
-  height: 100px;
-  z-index: 20;
-  -webkit-mask-image: linear-gradient(
-    rgba(0, 0, 0, 0) 75%,
-    rgb(0, 0, 0) 87.5%,
-    rgb(0, 0, 0) 100%
-  );
-  mask-image: linear-gradient(
-    rgba(0, 0, 0, 0) 75%,
-    rgb(0, 0, 0) 87.5%,
-    rgb(0, 0, 0) 100%
-  );
-  pointer-events: none;
-  -webkit-backdrop-filter: blur(3.5px);
-  backdrop-filter: blur(3.5px);
-  height: 250px;
-} */

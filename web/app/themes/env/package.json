@@ -5,12 +5,12 @@
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
-		"dev": "cross-env WP_ENV=development bunx vite & bun run watch:editor",
-		"build": "cross-env WP_ENV=production bunx vite build && bun run build:editor && bun run build:admin",
-		"dev:admin": "bunx vite --config admin/vite.config.js",
-		"build:admin": "cross-env WP_ENV=production bunx vite build --config admin/vite.config.js",
-		"watch:editor": "cross-env IS_EDITOR=true WP_ENV=development node_modules/.bin/postcss --watch --verbose --no-map assets/css/styles.css -o style-editor.css",
-		"build:editor": "cross-env IS_EDITOR=true WP_ENV=production node_modules/.bin/postcss assets/css/styles.css -o style-editor.css -m",
+		"dev": "WP_ENV=development node ./node_modules/vite/bin/vite.js & yarn watch:editor",
+		"build": "WP_ENV=production node ./node_modules/vite/bin/vite.js build && yarn build:editor && yarn build:admin",
+		"dev:admin": "node ./node_modules/vite/bin/vite.js --config admin/vite.config.js",
+		"build:admin": "WP_ENV=production node ./node_modules/vite/bin/vite.js build --config admin/vite.config.js",
+		"watch:editor": "IS_EDITOR=true WP_ENV=development node ./node_modules/postcss-cli/index.js --watch --verbose --no-map assets/css/editor.css -o style-editor.css",
+		"build:editor": "IS_EDITOR=true WP_ENV=production node ./node_modules/postcss-cli/index.js assets/css/editor.css -o style-editor.css -m",
 		"favicon": "node js-helpers/faviconGenerator.mjs",
 		"php:lint": "./vendor/bin/duster lint",
 		"php:fix": "./vendor/bin/duster fix"
@@ -61,10 +61,6 @@
 		"vite-plugin-live-reload": "3.0.3"
 	},
 	"dependencies": {
-		"@meilisearch/instant-meilisearch": "1.0.0",
-		"algoliasearch": "4.24.0",
-		"instantsearch.css": "^8.4.0",
-		"instantsearch.js": "4.73.4",
 		"lenis": "^1.3.15",
 		"tailwind-scrollbar": "^3.1.0"
 	},

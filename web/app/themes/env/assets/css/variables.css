@@ -1,5 +1,8 @@
+/* Theme CSS custom properties: layout heights and shared icons. */
+
 :root {
-    --gm-header-height: 3rem;
-    --gm-header-height-lg: 4rem;
-    --gm-hero-height: 50vh;
+  --gm-header-height: 3rem;
+  --gm-header-height-lg: 4rem;
+  --gm-hero-height: 50vh;
+  --env-arrow-icon: url("data:image/svg+xml,%3Csvg width='14' height='17' viewBox='0 0 14 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.4142 6.91418L6.91421 1.41418L1.41421 6.91418M6.91421 2.66418V15.6642' stroke='black' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E%0A");
 }

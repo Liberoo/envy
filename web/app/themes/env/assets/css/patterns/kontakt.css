@@ -1,0 +1,117 @@
+/* Contact section pattern. */
+
+.env-kontakt {
+  @apply bg-white text-primary py-fluid-2xl;
+  scroll-margin-top: 80px;
+}
+
+.env-kontakt .env-kontakt__grid {
+  @apply grid items-start gap-fluid-sm;
+  grid-template-columns: 1fr 380px;
+}
+
+.env-kontakt .wpcf7 form {
+  @apply flex flex-col gap-6;
+}
+
+.env-kontakt .wpcf7 p {
+  @apply m-0;
+}
+
+.env-kontakt .wpcf7 .wpcf7-form-control-wrap {
+  @apply block;
+}
+
+.env-kontakt .wpcf7 input[type="text"],
+.env-kontakt .wpcf7 input[type="email"],
+.env-kontakt .wpcf7 textarea {
+  @apply w-full bg-transparent text-primary outline-none rounded-none resize-none;
+  border: none;
+  border-bottom: 1.5px solid #d8d8d8;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.env-kontakt .wpcf7 input:focus,
+.env-kontakt .wpcf7 textarea:focus {
+  @apply border-primary;
+}
+
+.env-kontakt .wpcf7 input[type="submit"] {
+  @apply self-start bg-primary text-white uppercase cursor-pointer;
+  border: none;
+  padding: 17px 42px;
+  font-family: var(--wp--preset--font-family--jetbrains-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  margin-top: 8px;
+  transition: background-color 0.3s;
+}
+
+.env-kontakt .wpcf7 input[type="submit"]:hover {
+  background: #333;
+}
+
+.env-kontakt .wpcf7 .wpcf7-not-valid {
+  @apply border-accent;
+}
+
+.env-kontakt .wpcf7 .wpcf7-not-valid-tip {
+  @apply text-accent;
+  font-size: 0.8125rem;
+  margin-top: 6px;
+}
+
+.env-kontakt .wpcf7 .wpcf7-response-output {
+  @apply border-none m-0 p-0;
+  font-size: 0.875rem;
+}
+
+.env-kontakt .env-kontakt__lead {
+  @apply font-medium;
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-size: 1.5rem;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  margin: 0 0 32px;
+}
+
+.env-kontakt .env-kontakt__mail {
+  @apply m-0;
+}
+
+.env-kontakt .env-kontakt__mail a {
+  @apply text-primary no-underline;
+  font-family: var(--wp--preset--font-family--jetbrains-mono);
+  font-size: 0.9375rem;
+  border-bottom: 1.5px solid var(--wp--preset--color--primary);
+  padding-bottom: 3px;
+}
+
+.env-kontakt .env-kontakt__card {
+  @apply flex items-center gap-3 mt-10;
+}
+
+.env-kontakt .env-kontakt__card::before {
+  content: "";
+  width: 44px;
+  height: 44px;
+  background: repeating-linear-gradient(45deg, #d8d8d8, #d8d8d8 5px, #e8e8e8 5px, #e8e8e8 10px);
+}
+
+.env-kontakt .env-kontakt__card-name {
+  @apply m-0 font-medium;
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 782px) {
+  .env-kontakt .env-kontakt__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .env-kontakt .wpcf7 input[type="submit"] {
+    @apply self-stretch w-full;
+  }
+}

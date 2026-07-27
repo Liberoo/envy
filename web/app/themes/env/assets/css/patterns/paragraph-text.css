@@ -1,7 +1,5 @@
-/* .paragraph-text span:not(.random-letter) {
-  color: rgba(10, 10, 10, 0.6);
-} */
+/* Paragraph-text pattern. */
 
 .paragraph-text .text-dark {
-  color: var(--wp--preset--color--black);
+  @apply text-black;
 }

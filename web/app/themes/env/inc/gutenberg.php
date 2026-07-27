@@ -1,6 +1,6 @@
 <?php
 
-namespace WP_Performance\Inc;
+namespace Env\Inc;
 
 /**
  * Get all registered core block patterns names
@@ -76,6 +76,24 @@ function register_button_styles()
         'name' => 'pulse-reverse',
         'label' => __('Pulse Reverse', 'press-wind'),
         'style_handle' => 'button-pulse-reverse-style',
+    ]);
+
+    // Ghost: white outline on dark sections
+    register_block_style('core/button', [
+        'name' => 'ghost',
+        'label' => __('Ghost', 'press-wind'),
+    ]);
+
+    // Mono: white bg / dark text, JetBrains Mono uppercase
+    register_block_style('core/button', [
+        'name' => 'mono',
+        'label' => __('Mono', 'press-wind'),
+    ]);
+
+    // Mono Outline: same size as Mono, transparent with border, fills on hover
+    register_block_style('core/button', [
+        'name' => 'mono-outline',
+        'label' => __('Mono Outline', 'press-wind'),
     ]);
 
 }

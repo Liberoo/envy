@@ -64,9 +64,14 @@
     "wpackagist-plugin/svg-support": "*",
     "wpackagist-plugin/contact-form-7": "*",
     "wpackagist-plugin/slim-seo": "*",
+    "wpackagist-plugin/webp-converter-for-media" : "*",
     "wpackagist-plugin/duplicate-post": "*",
+    "wpackagist-plugin/advanced-query-loop": "*",
+    "wpackagist-plugin/better-search-replace": "*",
+    "wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
+
 	"wpackagist-plugin/updraftplus": "*",
-    "roots/wordpress": "6.9"
+    "roots/wordpress": "*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

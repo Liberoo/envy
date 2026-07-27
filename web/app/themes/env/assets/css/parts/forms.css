@@ -1,4 +1,5 @@
-/* Form Input Styles */
+/* Global form controls (inputs, labels, placeholders). */
+
 input,
 textarea:not([type="submit"]) {
   @apply bg-transparent py-4 px-0 w-full border-0 border-b-2 border-[rgba(0,0,0,0.12)] transition-[border-color,color] duration-300 ease-in-out will-change-[border-color,color] font-['Outfit',sans-serif] text-base placeholder:text-black placeholder:opacity-30 text-black;
@@ -9,7 +10,6 @@ textarea:focus {
   @apply border-0 border-b-2 border-black outline-none text-black;
 }
 
-/* Placeholder disappears when typing - standard HTML behavior */
 input:not(:placeholder-shown),
 textarea:not(:placeholder-shown) {
   @apply text-black;
@@ -19,7 +19,6 @@ label {
   @apply text-base transition-[color] duration-300 ease-in-out will-change-[color] block mb-[50px];
 }
 
-/* Screen reader only labels */
 .sr-only-label {
   @apply sr-only;
 }
@@ -43,7 +42,7 @@ input[type="submit"] {
   @apply p-5;
 }
 .contact-right {
-  @apply w-full md:w-1/2 order-1 md:order-2;
+  @apply w-full md:w-1/2 order-1 md:order-2 md:self-end md:!pb-28;
 }
 .contact-form {
   @apply order-2 md:order-1;
@@ -56,14 +55,16 @@ input[type="submit"] {
   @apply w-full;
 }
 
-/* Placeholder styles for form fields */
+.wpcf7 textarea {
+  @apply h-32 resize-y;
+}
+
 input[type="text"],
 input[type="email"],
 textarea {
   @apply placeholder:text-black placeholder:opacity-30;
 }
 
-/* Placeholder disappears when typing */
 input:not(:placeholder-shown)::placeholder,
 textarea:not(:placeholder-shown)::placeholder {
   @apply opacity-0;

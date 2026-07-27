@@ -8,15 +8,15 @@ import Lenis from "lenis";
 function initSmoothScroll() {
   // Create Lenis instance with configuration
   const lenis = new Lenis({
-    duration: 1.2, // Duration of scroll animationws
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
-    orientation: "vertical", // Vertical scrolling
-    gestureOrientation: "vertical", // Gesture orientation
-    smoothWheel: true, // Smooth mouse wheel scrolling
-    wheelMultiplier: 1, // Wheel multiplier
-    smoothTouch: false, // Disable smooth scrolling on touch devices (better performance)
-    touchMultiplier: 2, // Touch multiplier
-    infinite: false, // Don't allow infinite scrolling
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: "vertical",
+    gestureOrientation: "vertical",
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    syncTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
   });
 
   // Request animation frame function for smooth updates

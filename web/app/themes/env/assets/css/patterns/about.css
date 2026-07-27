@@ -1,0 +1,85 @@
+/* About section pattern. */
+
+.env-about {
+  @apply bg-white text-primary;
+}
+
+.env-about .env-about__grid {
+  @apply grid items-end gap-fluid-sm;
+  grid-template-columns: minmax(280px, 440px) 1fr;
+}
+
+.env-about .env-about__media {
+  @apply relative;
+  aspect-ratio: 4 / 5;
+}
+
+.env-about .env-about__photo {
+  @apply relative z-[1] m-0 w-full h-full overflow-hidden;
+}
+
+.env-about .env-about__photo img {
+  @apply w-full h-full object-cover block;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.env-about .env-about__name {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0 0 26px;
+}
+
+.env-about .env-about__name-first {
+  @apply font-light;
+}
+
+.env-about .env-about__name-last {
+  @apply font-bold;
+}
+
+.env-about .env-about__lead {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin: 0 0 38px;
+}
+
+.env-about .env-about__cols {
+  @apply grid grid-cols-2 gap-9 pt-9;
+  border-top: 1px solid #e4e4e4;
+}
+
+.env-about .env-about__label {
+  @apply uppercase;
+  font-family: var(--wp--preset--font-family--jetbrains-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  color: #595959;
+  margin: 0 0 12px;
+}
+
+.env-about .env-about__desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #333;
+  margin: 0;
+}
+
+@media (max-width: 782px) {
+  .env-about .env-about__grid {
+    @apply items-start;
+    grid-template-columns: 1fr;
+  }
+
+  .env-about .env-about__media {
+    max-width: 420px;
+  }
+
+  .env-about .env-about__cols {
+    @apply grid-cols-1 gap-6;
+  }
+}

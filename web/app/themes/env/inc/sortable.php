@@ -1,6 +1,6 @@
 <?php
 
-namespace WP_Performance\Inc;
+namespace Env\Inc;
 
 /** others settings */
 $sortable_type = ['training'];

@@ -1,3 +1,5 @@
+/* Video-noise hero pattern. */
+
 .video-noise-hero {
   @apply w-full  min-h-screen overflow-hidden flex items-end relative;
 }

@@ -1,0 +1,51 @@
+/* Desktop mockup scroll pattern. */
+
+.mockup-desktop {
+  @apply relative flex justify-center;
+}
+
+.mockup-desktop__inner {
+  @apply relative w-full;
+}
+
+.mockup-parent {
+  @apply absolute left-1/2 w-[91%] max-w-[932px] overflow-hidden aspect-[932/525] mt-0;
+  @apply -translate-x-1/2 top-[5%];
+}
+
+.mockup-website {
+  @apply w-full will-change-transform;
+  animation: mockupScroll 12s ease-in-out infinite;
+}
+
+.mockup-website img {
+  @apply w-full;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mockup-website {
+    animation: none;
+  }
+}
+
+@keyframes mockupScroll {
+
+  0% {
+    transform: translateY(0%);
+  }
+  8% {
+    transform: translateY(0%);
+  }
+
+  75% {
+    transform: translateY(-75%);
+  }
+
+  85% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}

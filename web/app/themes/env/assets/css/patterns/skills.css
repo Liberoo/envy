@@ -1,3 +1,5 @@
+/* Skills list pattern. */
+
 .skills {
   @apply list-none flex flex-wrap gap-3 min-w-[300px] p-0 m-0 pl-0 mt-10;
 }

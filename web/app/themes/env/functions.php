@@ -1,23 +1,15 @@
 <?php
 
-namespace WP_Performance;
+namespace Env;
 
-// inc, you can modify this files like you want
-require_once dirname(__FILE__) . '/inc/gutenberg.php';
-require_once dirname(__FILE__) . '/inc/login_assets.php';
-require_once dirname(__FILE__) . '/inc/sortable.php';
-
-// binding meta
-require_once dirname(__FILE__) . '/inc/binding-meta.php';
-
-// post type
-require_once dirname(__FILE__) . '/post-type/portfolio.php';
-require_once dirname(__FILE__) . '/post-type/training.php';
-
-// pwa icons - disabled, using WordPress favicon settings instead
-// if (file_exists(dirname(__FILE__) . '/inc/pwa_head.php')) {
-//   include dirname(__FILE__) . '/inc/pwa_head.php';
-// }
+require_once __DIR__ . '/inc/gutenberg.php';
+require_once __DIR__ . '/inc/login_assets.php';
+require_once __DIR__ . '/inc/sortable.php';
+require_once __DIR__ . '/inc/binding-meta.php';
+require_once __DIR__ . '/inc/newsletter.php';
+require_once __DIR__ . '/inc/deaktiver.php';
+require_once __DIR__ . '/post-type/portfolio.php';
+require_once __DIR__ . '/post-type/training.php';
 
 /**
  * Theme setup.
@@ -33,25 +25,26 @@ function setup()
 add_action('after_setup_theme', __NAMESPACE__ . '\setup');
 
 /**
- * init assets front
+ * Front assets via PressWind Vite.
  */
 if (class_exists('PressWind\PWVite')) {
-  \PressWind\PWVite::init(port: 3000, path: '');
+  // http in dev: self-signed cert broke the HMR websocket (reload loop)
+  \PressWind\PWVite::init(port: 3000, path: '', is_https: false);
   \PressWind\PWVite::init(
     port: 4444,
     path: '/admin',
     position: 'editor',
-    is_ts: false
+    is_ts: false,
+    is_https: false
   );
 }
 
 /**
- * Initialize block styles and other init functionality
+ * Register block styles.
  */
-function init_theme() {
-  add_filter('jpeg_quality', function () {
-    return 100;
-  }, 10, 2);
+function init_theme()
+{
+  add_filter('jpeg_quality', fn () => 100, 10, 2);
 
   register_block_style('core/image', [
     'name' => 'img-dropshadow',
@@ -64,18 +57,8 @@ function init_theme() {
   ]);
 
   register_block_style('core/heading', [
-    'name' => 'text-gradient',
-    'label' => __('Text Gradient', 'press-wind'),
-  ]);
-
-  register_block_style('core/heading', [
     'name' => 'text-effect',
     'label' => __('Text Effect', 'press-wind'),
-  ]);
-
-  register_block_style('core/heading', [
-    'name' => 'title-hero',
-    'label' => __('Title Hero', 'press-wind'),
   ]);
 
   register_block_style('core/paragraph', [
@@ -87,48 +70,54 @@ function init_theme() {
 add_action('init', __NAMESPACE__ . '\init_theme');
 
 /**
- * Enable Interactivity API support
+ * Enable Interactivity API support.
  */
-function enable_interactivity_api() {
-    add_theme_support('interactivity');
-    wp_enqueue_script('wp-interactivity');
+function enable_interactivity_api()
+{
+  add_theme_support('interactivity');
+  wp_enqueue_script('wp-interactivity');
 }
 
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enable_interactivity_api');
 
-/**
- * Register Custom Blocks
- */
-function register_kamil_test_block() {
-    // Add block category
-    add_filter('block_categories_all', function($categories) {
-        return array_merge($categories, [
-            [
-                'slug'  => 'press-wind-blocks',
-                'title' => 'Press Wind Blocks',
-                'icon'  => 'star-filled'
-            ]
-        ]);
-    });
-    
-    // Register the block
-    $block_path = get_theme_file_path('blocks/kamil-test-block');
-    if (file_exists($block_path . '/block.json')) {
-        register_block_type($block_path);
-    }
-}
-
-add_action('init', __NAMESPACE__ . '\register_kamil_test_block');
+add_filter('big_image_size_threshold', fn () => 5000);
 
 /**
- * Register RichText Example Block
+ * Hero entrance: full animation only on first visit. Runs in <head>
+ * before the hero renders; on later visits adds eh-seen on <html> so
+ * entrance-hero.css shortens the animation to the background slide.
  */
-function register_richtext_example_block() {
-    // Register the RichText example block
-    $block_path = get_theme_file_path('blocks/richtext-example');
-    if (file_exists($block_path . '/block.json')) {
-        register_block_type($block_path);
-    }
+function print_hero_seen_script()
+{
+  if (! is_front_page()) {
+    return;
+  }
+  ?>
+  <script>
+    try {
+      if (localStorage.getItem('env-hero-seen')) {
+        document.documentElement.classList.add('eh-seen');
+      }
+      localStorage.setItem('env-hero-seen', '1');
+    } catch (e) {}
+  </script>
+  <?php
 }
 
-add_action('init', __NAMESPACE__ . '\register_richtext_example_block');
+add_action('wp_head', __NAMESPACE__ . '\print_hero_seen_script', 1);
+
+/**
+ * Front config: correct URLs whether WP lives in a subdir (dev) or the
+ * domain root (prod). Used by scripts.js ([data-env-blog]) and archive-filter.js.
+ */
+function print_env_site_config()
+{
+  $blog_page = (int) get_option('page_for_posts');
+  $config = [
+    'blog' => $blog_page ? get_permalink($blog_page) : home_url('/'),
+  ];
+
+  printf('<script>window.ENV_SITE = %s;</script>', wp_json_encode($config));
+}
+
+add_action('wp_footer', __NAMESPACE__ . '\print_env_site_config');

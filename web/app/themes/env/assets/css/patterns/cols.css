@@ -1,3 +1,5 @@
+/* Two-column text/image pattern. */
+
 .cols {
   @apply mx-auto flex flex-col lg:flex-row justify-between items-center gap-5 md:gap-20;
 }

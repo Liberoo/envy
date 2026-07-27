@@ -1,0 +1,41 @@
+/* CTA section pattern. */
+
+.env-cta {
+  @apply bg-white text-primary;
+  border-top: 1px solid #ececec;
+}
+
+.env-cta .env-cta__grid {
+  @apply grid items-center;
+  grid-template-columns: 1fr auto;
+  gap: clamp(32px, 5vw, 64px);
+}
+
+.env-cta .env-cta__title {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  padding-bottom: 0.08em;
+  margin: 24px 0 0;
+  color: var(--wp--preset--color--primary);
+}
+
+.env-cta .env-cta__desc {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin: 28px 0 0;
+  max-width: 520px;
+}
+
+.env-cta .env-cta__action {
+  @apply shrink-0;
+}
+
+@media (max-width: 782px) {
+  .env-cta .env-cta__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,19 +1,15 @@
-document.querySelectorAll("button[aria-controls]").forEach((button) => {
-  const targetId = button.getAttribute("aria-controls");
-  const target = document.getElementById(targetId);
+// FAQ accordion: toggle aria-expanded and animate the linked panel height.
 
-  // Sprawdź czy target istnieje
-  if (!target) {
-    console.warn(`FAQ: Element with ID "${targetId}" not found`);
-    return;
-  }
+document.querySelectorAll("button[aria-controls]").forEach((button) => {
+  const target = document.getElementById(button.getAttribute("aria-controls"));
+  if (!target) return;
 
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", !expanded);
+    button.setAttribute("aria-expanded", String(!expanded));
 
     if (!expanded) {
-      target.style.maxHeight = target.scrollHeight + "px";
+      target.style.maxHeight = `${target.scrollHeight}px`;
       target.classList.add("open");
     } else {
       target.style.maxHeight = "0px";

@@ -8,39 +8,22 @@ module.exports = {
   corePlugins: {
     preflight: process.env.IS_EDITOR ? false : usePreflightFront,
   },
-  content: ["./footer-credit.php"],
+  content: [
+    "./templates/**/*.html",
+    "./parts/**/*.html",
+    "./patterns/**/*.php",
+  ],
   theme: {
     extend: {
-      gridTemplateColumns: {
-        main: "8rem 1fr 8rem",
-        "main-small": "1rem 1fr 1rem",
-      },
-      backgroundImage: (theme) => ({
-        "wp-performance": "url('/assets/media/wp-performance.png')",
-        star: "url('/assets/media/star.svg')",
-        zip: "url('/assets/media/zip.svg')",
-        noise: "url('/assets/media/noise.png')",
-        "link-gradient": "linear-gradient(to left,#BE185D,rgb(150,20,90));",
-      }),
-      colors: {
-        body: "linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);",
-        primary: "var(--wp--preset--color--primary)",
-        accent: "var(--wp--preset--color--accent)",
-      },
-      animation: {
-        "text-gradient": "gradient-text 5s ease infinite",
-      },
-      keyframes: {
-        "text-gradient": {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center",
-          },
-        },
+      // Recurring fluid spacing (clamp) tokens → gap-fluid-*, p-fluid-*, py-fluid-* …
+      // Named tokens generate reliably; an arbitrary clamp() in a class does not.
+      spacing: {
+        "fluid-xs": "clamp(20px, 4vw, 40px)",
+        "fluid-sm": "clamp(40px, 6vw, 80px)",
+        "fluid-md": "clamp(60px, 8vw, 90px)",
+        "fluid-lg": "clamp(70px, 9vw, 110px)",
+        "fluid-xl": "clamp(80px, 10vw, 120px)",
+        "fluid-2xl": "clamp(90px, 11vw, 140px)",
       },
       fontFamily: {
         pressstart: ["'Press Start 2P'", "cursive"],
@@ -56,34 +39,21 @@ module.exports = {
   ],
   // Control Tailwind loading via WP_TAILWIND variable
   // WP_TAILWIND=full -> generate all classes (slow but complete)
-  // Default -> add your custom patterns below
+  // Default -> generate only the safelisted classes below
   safelist:
     process.env.WP_TAILWIND === "full"
       ? [{ pattern: /.*/ }]
       : [
-          // Add your patterns here - they will be available in Gutenberg editor
-
-          // Example: Background colors you use
           "bg-yellow-400",
           "bg-red-500",
           "bg-blue-600",
-
-          // Example: Common utilities
           "text-center",
           "rounded-lg",
           "shadow-md",
-
-          // Example: Layout classes
           "p-4",
           "p-8",
           "m-4",
           "flex",
           "block",
-
-          // Example: Pattern for all red backgrounds
-          // { pattern: /bg-red-\d+/ },
-
-          // Example: Pattern for padding/margin
-          // { pattern: /[pm]-\d+/ },
         ],
 };

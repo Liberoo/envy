@@ -1,7 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import legacy from "@vitejs/plugin-legacy";
-import basicSsl from "@vitejs/plugin-basic-ssl";
 import liveReload from "vite-plugin-live-reload";
 import getThemeDir from "./js-helpers/getThemeDir.mjs";
 import loadEnv from "./js-helpers/loadEnv.mjs";
@@ -12,7 +11,9 @@ loadEnv();
 // https://vitejs.dev/config/
 export const viteConfig = {
 	cacheDir: "./node_modules/.vite/press-wind",
-	plugins: [basicSsl(), liveReload([`${__dirname}+ "/**/*.php`]), legacy({})],
+	// dev bez https: samopodpisany cert blokował wss (HMR) i klient Vite
+	// wpadał w pętlę reloadów; na http ws:// działa bez akceptowania certów
+	plugins: [liveReload([`${__dirname}/**/*.php`]), legacy({})],
 	base:
 		process.env.WP_ENV === "development"
 			? `/app/themes/${getThemeDir()}/`
@@ -39,9 +40,8 @@ export const viteConfig = {
 		cors: true,
 		strictPort: true,
 		port: 3000,
-		https: true,
 		hmr: {
-			protocol: "wss",
+			protocol: "ws",
 			port: 3000,
 			// host: 'localhost',
 		},

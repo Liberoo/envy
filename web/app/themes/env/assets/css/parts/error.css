@@ -1,3 +1,45 @@
-.error-page {
-  @apply min-h-screen w-full flex items-center justify-center;
+/* 404 error page. */
+
+.env-404-hero {
+  @apply mb-0;
+}
+
+.env-404-cover .wp-block-cover__inner-container {
+  @apply w-full;
+}
+
+.env-404 {
+  @apply w-full max-w-[1280px] mx-auto text-white text-left;
+  padding-inline: clamp(20px, 5vw, 80px);
+  padding-block: clamp(40px, 8vw, 96px);
+}
+
+.env-404__kicker {
+  @apply uppercase;
+  font-family: var(--wp--preset--font-family--jetbrains-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  color: #b5b5b5;
+  margin: 0 0 24px;
+}
+
+.env-404__title {
+  @apply text-white font-bold m-0;
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-size: clamp(3.5rem, 12vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.env-404__text {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  color: #d8d8d8;
+  max-width: 460px;
+  margin: 28px 0 0;
+}
+
+.env-404__actions {
+  @apply mt-10;
 }

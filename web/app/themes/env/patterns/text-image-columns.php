@@ -13,7 +13,7 @@
 
 ?>
 
-<!-- wp:group {"className":"wrapper cntainer cols""layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<!-- wp:group {"className":"wrapper container cols","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group wrapper container cols">
 
 	<!-- wp:group {"className":"cols-left"} -->

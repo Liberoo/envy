@@ -1,3 +1,5 @@
+/* Global element styles, block-style variants and utility classes. */
+
 body {
   @apply bg-[var(--wp--preset--color--clear-gray)];
 }
@@ -19,7 +21,6 @@ body {
   @apply py-0;
 }
 
-/** width content align */
 .entry-content ul:not(.wp-block-post-template) {
   @apply pl-9;
 }
@@ -29,19 +30,34 @@ body {
   @apply pl-0;
 }
 
-/** template */
 .no-hero {
   @apply pt-48;
 }
 
-/** text selection color */
-
 ::selection {
-  @apply text-white bg-[#83a165];
+  background: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
 }
 
 ::-moz-selection {
-  @apply text-white bg-[#83a165];
+  background: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
+}
+
+.env-dark ::selection,
+.entrance-hero ::selection,
+.navigation ::selection,
+footer.footer ::selection {
+  background: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
+}
+
+.env-dark ::-moz-selection,
+.entrance-hero ::-moz-selection,
+.navigation ::-moz-selection,
+footer.footer ::-moz-selection {
+  background: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
 }
 
 .wp-block-post-title a,
@@ -61,18 +77,13 @@ h4 {
   hyphens: auto;
 }
 
-/** core/separator */
 .wp-block-separator {
   border-bottom: 1px solid;
 }
 
-/** code **/
-
 p > code {
   @apply px-1 py-0.5 bg-slate-200;
 }
-
-/** block style */
 
 .is-style-img-dropshadow img {
   filter: drop-shadow(0 0 0.75rem var(--wp--preset--color--cyan-bluish-gray));
@@ -81,10 +92,6 @@ p > code {
 .is-style-img-dropshadow-rounded img {
   @apply rounded-xl;
   filter: drop-shadow(0 0 0.75rem var(--wp--preset--color--cyan-bluish-gray));
-}
-
-.is-style-text-gradient {
-  @apply text-transparent bg-gradient-to-r bg-clip-text from-[#bd34fe] to-[#41d1ff] animate-text-gradient;
 }
 
 .is-style-text-effect {
@@ -96,74 +103,21 @@ p > code {
 }
 
 .presswind-link a span {
-  /* @apply text-transparent bg-gradient-to-r bg-clip-text from-[#bd34fe] to-[#41d1ff] animate-text-gradient; */
   @apply font-extrabold transition-all text-accent;
-  /* text-shadow: 1px 1px 0px var(--wp--preset--color--primary); */
-  /* 1.1px 1.1px 0px var(--wp--preset--color--secondary); */
-  /* 1.2px 1.2px 0px var(--wp--preset--color--cyan-bluish-gray); */
-}
-
-.is-style-title-hero {
-  @apply text-transparent from-accent to-pink-900 bg-gradient-to-tr bg-clip-text text-balance;
 }
 
 .is-style-underscore {
   @apply before:content-[''] before:w-10 before:bg-accent before:h-[3px] before:block flex items-center gap-1;
 }
 
-/** button icon presswind */
-
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.button-with-icon {
-  --borderWidth: 2px;
-  @apply relative bg-white rounded-3xl;
-}
-
-.button-with-icon:after {
-  @apply content-[''] absolute rounded-full z-[-1];
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab);
-  animation: animatedgradient 2s ease alternate infinite;
-  background-size: 300% 300%;
-}
-
-.button-with-icon > p > a {
-  @apply static hover:after:hidden before:content-[''] before:absolute before:inset-0.5 before:bg-transparent before:rounded-3xl before:hover:bg-white/25 before:border before:border-transparent before:block;
-}
-
-.button-with-icon .wp-block-social-links {
-  @apply ml-3;
-}
-
-.wp-search-algolia {
-  @apply min-h-[500px];
-}
-
-/** hero **/
 .gm-hero-home p {
   @apply lg:text-balance;
 }
 
-/** bug shiki in safari IOS **/
 pre.shiki code span.line span {
   -webkit-text-size-adjust: none;
 }
 
-/** simple */
 .wpp-simple-bloc {
   @apply flex-col md:flex-row;
 }
@@ -173,6 +127,9 @@ pre.shiki code span.line span {
 
 .wrapper {
   @apply container mx-auto px-5;
+}
+.wrapper-900{
+  @apply max-w-[900px];
 }
 .wrapper-xl {
   @apply max-w-[1500px];
@@ -192,17 +149,14 @@ a {
   @apply text-white no-underline;
 }
 
-/* Disable taxonomy links - make them non-clickable */
 .wp-block-post-terms a {
   @apply pointer-events-none cursor-default;
 }
 
-/* Re-enable links for portfolio page filtering */
 .portfolio-filter .wp-block-post-terms a {
   @apply pointer-events-auto cursor-pointer;
 }
 
-/* Portfolio Filter Styles */
 .filter-indicator {
   @apply bg-gray-100 border border-gray-300 rounded-lg p-4 mb-6 flex justify-between items-center;
 }
@@ -215,74 +169,11 @@ a {
   @apply bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors;
 }
 
-/* Hide filtered items */
 .filter-active .wp-block-post[style*="display: none"] {
   @apply hidden;
 }
 
-/* Button Styles */
-.btn {
-  @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2;
-}
-
-/* Filled Button */
-.btn-filled {
-  @apply bg-black text-white border-2 border-black hover:bg-white hover:text-black focus:ring-black;
-}
-
-/* Outline Button */
-.btn-outline {
-  @apply bg-transparent text-black border-2 border-black hover:bg-black hover:text-white focus:ring-black;
-}
-
-/* Pulse Button */
-.btn-pulse {
-  @apply bg-black text-white border-2 border-black hover:bg-white hover:text-black focus:ring-black;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-/* Button Sizes */
-.btn-sm {
-  @apply px-4 py-2 text-sm;
-}
-
-.btn-lg {
-  @apply px-8 py-4 text-lg;
-}
-
-/* Button States */
-.btn:disabled {
-  @apply opacity-50 cursor-not-allowed;
-}
-
-.btn:disabled:hover {
-  @apply transform-none;
-}
-
-/*
-
-/* Screen Reader Only - Accessibility */
-.sr-only {
-  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
-  clip: rect(0, 0, 0, 0);
-}
-
-/* Visibility Hidden - Alternative to sr-only */
+.sr-only,
 .visually-hidden {
   @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
   clip: rect(0, 0, 0, 0);
@@ -292,14 +183,11 @@ a {
 .no-display {
   @apply hidden;
 }
+
 a:not(.wp-block-button__link) {
   color: inherit;
   position: relative;
   transition:
     color 0.3s ease-in-out,
     filter 0.3s ease-in-out;
-
-  /* &:hover {
-    filter: invert(0.5);
-  } */
 }

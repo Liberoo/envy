@@ -1,3 +1,5 @@
+/* FAQ accordion pattern. */
+
 .faq {
   @apply bg-black   mx-auto overflow-hidden text-white relative pb-24;
   counter-reset: faq;
@@ -43,7 +45,7 @@
   display: block;
   width: 30px;
   height: 30px;
-  background: white; /* kolor ikony */
+  background: var(--wp--preset--color--white);
   transition: transform 0.3s ease-in-out;
   transform-origin: bottom left;
 
